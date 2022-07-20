@@ -1,0 +1,14 @@
+.container {
+    background-color: white;
+    margin: 20px 0;
+}
+
+.title {
+    margin: 0;
+    padding: 10px;
+}
+
+.grid {
+    display: grid;
+    gap: 10px
+}

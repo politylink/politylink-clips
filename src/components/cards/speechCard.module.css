@@ -1,0 +1,42 @@
+.card {
+    background-color: white;
+    display: flex;
+    padding: 20px;
+}
+
+.image {
+    padding: 0;
+    margin-right: 10px;
+    object-fit: cover;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.body {
+    width: 85%;
+}
+
+.speaker {
+    display: flex;
+    align-items: center;
+}
+
+.speaker-name {
+    margin: 0 10px 0 0;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.speaker-info {
+    margin: 0;
+    font-weight: 400;
+    color: #848484;
+    font-size: 12px;
+}
+
+.speech {
+    color: #404040;
+    font-size: 14px;
+}
+
