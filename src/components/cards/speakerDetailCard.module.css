@@ -1,0 +1,78 @@
+.link {
+    text-decoration: none;
+}
+
+.card {
+    background-color: white;
+    padding: 10px 0;
+}
+
+.title {
+    padding: 0 10px;
+    margin: 0 0 10px 0;
+}
+
+.body {
+    display: flex;
+    padding: 0 20px;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.detail:hover {
+    text-decoration: underline;
+}
+
+.image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.info {
+    flex-grow: 1;
+    margin: 0 5px 0 10px;
+    color: #333;
+}
+
+.info-name {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.info-detail {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info-text {
+    margin: 0 5px 0 0;
+    font-size: 14px;
+    color: #848484;
+}
+
+.follow {
+    width: 40%;
+    border-radius: 24px;
+    margin: auto;
+    background-color: black;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.follow-text {
+    color: white;
+    font-weight: 700;
+    margin: 0;
+    text-decoration: none;
+}

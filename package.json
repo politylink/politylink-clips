@@ -15,7 +15,15 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fontsource/noto-sans-jp": "^4.5.10",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "gatsby": "^4.18.2",
+    "gatsby-plugin-image": "^2.19.0",
+    "gatsby-source-filesystem": "^4.18.1",
+    "gatsby-transformer-json": "^4.18.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
   }
