@@ -8,13 +8,13 @@
     padding: 0;
     margin-right: 10px;
     object-fit: cover;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
 }
 
 .body {
-    width: 85%;
+    width: 90%;
 }
 
 .speaker {

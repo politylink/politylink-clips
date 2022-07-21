@@ -9,19 +9,19 @@
     max-width: 100%;
 }
 
-.detail {
+.body {
     padding: 20px 50px;
     max-width: 100%;
 }
 
-.detail-title {
+.title {
     font-size: 24px;
     font-weight: 700;
     letter-spacing: -0.05em;
     margin: 0;
 }
 
-.detail-sub-title {
+.sub-title {
     font-size: 16px;
     color: #848484;
     font-weight: 400;
@@ -58,11 +58,13 @@
     color: white;
 }
 
-@media screen and (max-width: 540px) {
-    .detail {
+@media screen and (max-width: 840px) {
+    .body {
         padding: 20px;
     }
+}
 
+@media screen and (max-width: 540px) {
     .link-item {
         width: 90%;
         margin: 5px 0;

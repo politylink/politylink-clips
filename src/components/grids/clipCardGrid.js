@@ -12,10 +12,13 @@ const ClipCardGrid = ({title, clips}) => {
                         <ClipCard
                             title={clip.title}
                             date={clip.date}
-                            house={"参議院"}
-                            meeting={"国土交通委員会"}
-                            imageUrl={"/509.jpg"}
-                            speakerImageUrl={"/kimura.jpeg"}
+                            house={clip.house}
+                            meeting={clip.meeting}
+                            clipUrl={clip.clipUrl}
+                            imageUrl={clip.imageUrl}
+                            speakerImageUrl={clip.speaker.imageUrl}
+                            speakerName={clip.speaker.name}
+                            speakerInfo={clip.speaker.info}
                         />
                     ))
                 }

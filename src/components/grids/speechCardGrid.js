@@ -9,10 +9,10 @@ const SpeechCardGrid = ({speeches}) => {
                 {
                     speeches.map(speech => (
                         <SpeechCard
-                            speakerName={speech.name}
-                            speakerInfo={speech.info}
                             speech={speech.speech}
-                            imageUrl={speech.imageUrl}
+                            speakerName={speech.speaker.name}
+                            speakerInfo={speech.speaker.info}
+                            imageUrl={speech.speaker.imageUrl}
                         />
                     ))
                 }

@@ -6,10 +6,10 @@ const ClipDetailCard = ({title, date, house, meeting, imageUrl, minutesUrl, vide
     const subTitle = `${date} ${house} ${meeting}`
     return (
         <div className={styles.card}>
-            <img src={imageUrl} alt={"スクリーンショット"} className={styles.image}/>
-            <div className={styles.detail}>
-                <p className={styles.detailTitle}>{title}</p>
-                <p className={styles.detailSubTitle}>{subTitle}</p>
+            <img src={imageUrl} alt={"サムネイル"} className={styles.image}/>
+            <div className={styles.body}>
+                <p className={styles.title}>{title}</p>
+                <p className={styles.subTitle}>{subTitle}</p>
                 <div className={styles.links}>
                     <a href={videoUrl} target="_blank" rel="noopener noreferrer" className={styles.linkItem}>
                         <FontAwesomeIcon icon="fa-solid fa-file-video" size="m"/>
