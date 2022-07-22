@@ -12,7 +12,7 @@ const SpeakerCardGrid = ({title, speakers}) => {
                         <SpeakerCard
                             name={speaker.name}
                             group={speaker.group}
-                            district={speaker.district}
+                            block={speaker.block}
                             speakerUrl={speaker.speakerUrl}
                             imageUrl={speaker.imageUrl}
                         />

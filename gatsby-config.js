@@ -8,8 +8,7 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                name: `clip`,
-                path: `${__dirname}/clip/`,
+                path: `${__dirname}/data/clip/`,
             },
         }
     ],

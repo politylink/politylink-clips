@@ -71,7 +71,7 @@ export const query = graphql`
       speakers {
         name
         group
-        district
+        block
         imageUrl
       }
       clips {

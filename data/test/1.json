@@ -1,0 +1,71 @@
+{
+  "clip": {
+    "clipId": 1,
+    "title": "緊急事態対応に関し、議員の任期延長等について、早急に検討すべきとの見解",
+    "date": "2022-03-23",
+    "house": "参議院",
+    "meeting": "憲法審査会",
+    "imageUrl": "/image/clip/1.jpg",
+    "minutesUrl": "https://kokkai.ndl.go.jp/txt/120814183X00120220323/4",
+    "videoUrl": "https://gclip1.grips.ac.jp/video/video/11093?t=3m16s"
+  },
+  "speeches": [
+    {
+      "speaker": {
+        "name": "石井準一",
+        "imageUrl": "/image/anonymous.png",
+        "info": "自由民主党・国民の声",
+        "group": "自由民主党・国民の声",
+        "block": ""
+      },
+      "speech": "まず、今国会最初の参議院憲法審査会が円満に開催されたことを大変うれしく思っております。ここに至るまでの与野党幹事の皆様方の御理解、御協力に深く敬意と感謝を示したいと存じます。また、衆議院において憲法第五十六条第一項の「出席」の概念について議論を行い、例外的にいわゆるオンラインによる出席も含まれると解釈することができるとの意見が多かったとする報告書をまとめられたことに敬意を表したいと思います。昨年五月の参議院憲法審査会でも申し上げたところでありますが、憲法は国民のものであります。国民投票で憲法改正について最終的に判断を下すのは国民の皆様方であります。であるからこそ、国民の皆様方に憲法についての案..."
+    },
+    {
+      "speaker": {
+        "name": "中川雅治",
+        "imageUrl": "/image/anonymous.png",
+        "info": "自由民主党・国民の声",
+        "group": "自由民主党・国民の声",
+        "block": ""
+      },
+      "speech": "小西洋之君。"
+    }
+  ],
+  "speakers": [
+    {
+      "name": "石井準一",
+      "imageUrl": "/image/anonymous.png",
+      "info": "自民・千葉",
+      "group": "自民",
+      "block": "千葉"
+    }
+  ],
+  "clips": [
+    {
+      "title": "ＳＡＦの安定供給に係るサプライチェーンの構築に向けた取組状況",
+      "date": "2022/6/2",
+      "house": "参議院",
+      "meeting": "国土交通委員会",
+      "clipUrl": "/clip/2712",
+      "imageUrl": "/image/clip/2712.jpg",
+      "speaker": {
+        "name": "朝日 健太郎",
+        "info": "自民・東京",
+        "imageUrl": "/image/anonymous.png"
+      }
+    },
+    {
+      "title": "国産ＳＡＦの研究開発及び製造に係る今後の見通し",
+      "date": "2022/6/2",
+      "house": "参議院",
+      "meeting": "国土交通委員会",
+      "clipUrl": "/clip/2719",
+      "imageUrl": "/image/clip/2719.jpg",
+      "speaker": {
+        "name": "竹内 真二",
+        "info": "公明・比例",
+        "imageUrl": "/image/anonymous.png"
+      }
+    }
+  ]
+}

@@ -2,3 +2,5 @@ node_modules/
 .cache/
 public
 .idea/
+data/clip
+static/image/clip

@@ -3,7 +3,7 @@ import * as styles from './speakerCard.module.css';
 
 import {Link} from "gatsby";
 
-const SpeakerCard = ({name, group, district, speakerUrl, imageUrl}) => {
+const SpeakerCard = ({name, group, block, speakerUrl, imageUrl}) => {
     return (
         <div className={styles.card}>
             <Link to={speakerUrl} className={styles.speaker}>
@@ -12,7 +12,7 @@ const SpeakerCard = ({name, group, district, speakerUrl, imageUrl}) => {
                     <p className={styles.name}>{name}</p>
                     <div className={styles.info}>
                         <p className={styles.infoText}>{group}</p>
-                        <p className={styles.infoText}>{district}</p>
+                        <p className={styles.infoText}>{block}</p>
                     </div>
                 </div>
             </Link>
