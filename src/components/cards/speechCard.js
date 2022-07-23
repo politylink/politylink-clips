@@ -4,7 +4,7 @@ import * as styles from './speechCard.module.css';
 const SpeechCard = ({speech, speakerName, speakerInfo, imageUrl}) => {
     return (
         <div className={styles.card}>
-            <img src={imageUrl} alt={"顔写真"} className={styles.image}/>
+            <img src={imageUrl} alt={"face"} className={styles.image}/>
             <div className={styles.body}>
                 <div className={styles.speaker}>
                     <p className={styles.speakerName}>{speakerName}</p>

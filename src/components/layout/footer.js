@@ -8,9 +8,9 @@ const Footer = () => {
         <footer>
             <div className={styles.footer}>
                 <div className={styles.footerIcons}>
-                    <FontAwesomeIcon icon="fa-brands fa-twitter" size="m" className={styles.footerIconItem}/>
-                    <FontAwesomeIcon icon="fa-brands fa-instagram" size="m" className={styles.footerIconItem}/>
-                    <FontAwesomeIcon icon="fa-envelope-open" size="m" className={styles.footerIconItem}/>
+                    <FontAwesomeIcon icon="fa-brands fa-twitter" size="sm" className={styles.footerIconItem}/>
+                    <FontAwesomeIcon icon="fa-brands fa-instagram" size="sm" className={styles.footerIconItem}/>
+                    <FontAwesomeIcon icon="fa-envelope-open" size="sm" className={styles.footerIconItem}/>
                 </div>
                 <p className={styles.footerText}>{"© 2022 PolityLink - All Rights Reserved"}</p>
             </div>

@@ -1,8 +1,11 @@
 import * as React from "react";
-import * as styles from './clipCardGrid.module.css';
+import * as mainStyles from './clipCardGrid.main.module.css'
+import * as subStyles from './clipCardGrid.sub.module.css';
 import ClipCard from "../cards/clipCard";
+import {buildClipImageUrl, buildClipUrl, buildSpeakerImageUrl} from "../../utils/url";
 
-const ClipCardGrid = ({title, clips}) => {
+const ClipCardGrid = ({title, clips, isSub = false}) => {
+    const styles = isSub ? subStyles : mainStyles;
     return (
         <div className={styles.container}>
             <p className={styles.title}>{title}</p>
@@ -10,15 +13,16 @@ const ClipCardGrid = ({title, clips}) => {
                 {
                     clips.map(clip => (
                         <ClipCard
+                            key={clip.clipId}
                             title={clip.title}
                             date={clip.date}
                             house={clip.house}
                             meeting={clip.meeting}
-                            clipUrl={clip.clipUrl}
-                            imageUrl={clip.imageUrl}
-                            speakerImageUrl={clip.speaker.imageUrl}
+                            clipUrl={buildClipUrl(clip.clipId)}
+                            imageUrl={buildClipImageUrl(clip.clipId)}
                             speakerName={clip.speaker.name}
                             speakerInfo={clip.speaker.info}
+                            speakerImageUrl={buildSpeakerImageUrl()}
                         />
                     ))
                 }

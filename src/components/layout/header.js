@@ -21,7 +21,7 @@ const Header = () => {
                 <ul className={styles.navLinks}>
                     {
                         navLinkTexts.map(text => (
-                            <Link to="/" className={styles.navLinkText}>{text}</Link>
+                            <Link to="/" key={text} className={styles.navLinkText}>{text}</Link>
                         ))
                     }
                 </ul>

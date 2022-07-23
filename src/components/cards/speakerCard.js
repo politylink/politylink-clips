@@ -7,7 +7,7 @@ const SpeakerCard = ({name, group, block, speakerUrl, imageUrl}) => {
     return (
         <div className={styles.card}>
             <Link to={speakerUrl} className={styles.speaker}>
-                <img src={imageUrl} alt={"顔写真"} className={styles.image}/>
+                <img src={imageUrl} alt={"face"} className={styles.image}/>
                 <div className={styles.detail}>
                     <p className={styles.name}>{name}</p>
                     <div className={styles.info}>

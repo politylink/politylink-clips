@@ -7,6 +7,7 @@ import ClipDetailCard from "../../components/cards/clipDetailCard";
 import ClipCardGrid from "../../components/grids/clipCardGrid";
 import SpeechCardGrid from "../../components/grids/speechCardGrid";
 import SpeakerCardGrid from "../../components/grids/speakerCardGrid";
+import {buildClipImageUrl} from "../../utils/url";
 
 const ClipPage = ({data}) => {
     const clip = data.clipJson.clip
@@ -23,7 +24,7 @@ const ClipPage = ({data}) => {
                         date={clip.date}
                         house={clip.house}
                         meeting={clip.meeting}
-                        imageUrl={clip.imageUrl}
+                        imageUrl={buildClipImageUrl(clip.clipId)}
                         videoUrl={clip.videoUrl}
                         minutesUrl={clip.minutesUrl}
                     />
@@ -39,6 +40,7 @@ const ClipPage = ({data}) => {
                     <ClipCardGrid
                         title={"関連クリップ"}
                         clips={clips}
+                        isSub={true}
                     />
                 </div>
             </div>
@@ -56,7 +58,6 @@ export const query = graphql`
         date
         house
         meeting
-        imageUrl
         videoUrl
         minutesUrl
       }
@@ -64,7 +65,6 @@ export const query = graphql`
         speaker {
           name
           info
-          imageUrl 
         }
         speech
       }
@@ -72,19 +72,16 @@ export const query = graphql`
         name
         group
         block
-        imageUrl
       }
       clips {
+        clipId
         title
         date
         house
         meeting
-        clipUrl
-        imageUrl
         speaker {
           name
           info
-          imageUrl
         }
       }
     }

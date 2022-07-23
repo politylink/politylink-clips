@@ -1,0 +1,17 @@
+.container {
+    margin: 20px 0;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+
+.title {
+    margin: 0;
+    padding: 10px;
+}
+
+.grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
