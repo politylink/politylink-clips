@@ -1,11 +1,22 @@
 import * as React from 'react'
 import * as styles from './header.module.css'
-import {Link} from 'gatsby'
+import {graphql, Link, useStaticQuery} from 'gatsby'
 
 import "../../utils/fontawesome";
 
 const Header = () => {
-    const navLinkTexts = ['ホーム', '社会', '経済', '外交', 'テクノロジー', '環境', '暮らし', 'エネルギー']
+    const data = useStaticQuery(
+        graphql`
+            query {
+                allCategoryJson {
+                    nodes {
+                        categoryId
+                        name
+                    }
+                }
+            }
+        `
+    )
     return (
         <header>
             <div className={styles.header}>
@@ -19,9 +30,14 @@ const Header = () => {
             </div>
             <nav>
                 <ul className={styles.navLinks}>
+                    <Link to="/" key={0} className={styles.navLinkText}>{"ホーム"}</Link>
                     {
-                        navLinkTexts.map(text => (
-                            <Link to="/" key={text} className={styles.navLinkText}>{text}</Link>
+                        data.allCategoryJson.nodes.map(node => (
+                            <Link to={`/category/${node.categoryId}`}
+                                  key={node.categoryId}
+                                  className={styles.navLinkText}>
+                                {node.name}
+                            </Link>
                         ))
                     }
                 </ul>

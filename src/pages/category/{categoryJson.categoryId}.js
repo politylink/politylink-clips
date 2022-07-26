@@ -1,14 +1,15 @@
 import * as React from "react"
 import {graphql} from 'gatsby'
-import Layout from "../components/layout/layout";
-import ClipCardGrid from "../components/grids/clipCardGrid";
+import Layout from "../../components/layout/layout";
+import ClipCardGrid from "../../components/grids/clipCardGrid";
 
-const IndexPage = ({data}) => {
+const CategoryPage = ({data}) => {
+    const title = data.categoryJson.name
     const clips = data.allClipJson.nodes.map(node => node.clip)
     return (
         <Layout>
             <ClipCardGrid
-                title={"クリップ一覧"}
+                title={title}
                 clips={clips}
             />
         </Layout>
@@ -16,8 +17,12 @@ const IndexPage = ({data}) => {
 }
 
 export const query = graphql`
-  query {
-    allClipJson {
+  query ($id: String, $categoryId: Int) {
+    categoryJson (id: {eq: $id}) {
+        id
+        name
+    }
+    allClipJson (filter: {clip: {categoryId: {eq: $categoryId}}}) {
       nodes {
         id
         clip {
@@ -36,4 +41,5 @@ export const query = graphql`
   }
 `
 
-export default IndexPage
+
+export default CategoryPage

@@ -10,6 +10,12 @@ module.exports = {
             options: {
                 path: `${__dirname}/data/clip/`,
             },
-        }
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/data/category/`,
+            },
+        },
     ],
 }
