@@ -17,7 +17,7 @@ const IndexPage = ({data}) => {
 
 export const query = graphql`
   query {
-    allClipJson {
+    allClipJson(sort: {fields: [clip___date, clip___clipId], order: [DESC, ASC]}) {
       nodes {
         id
         clip {

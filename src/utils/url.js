@@ -7,8 +7,8 @@ export const buildClipImageUrl = (clip_id) => {
     return `/image/clip/${clip_id}.jpg`
 }
 
-export const buildSpeakerUrl = () => {
-    return '/'
+export const buildMemberUrl = (member_id) => {
+    return `/member/${member_id}`
 }
 
 export const buildSpeakerImageUrl = () => {

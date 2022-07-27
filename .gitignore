@@ -3,4 +3,5 @@ node_modules/
 public
 .idea/
 data/clip
+data/member
 static/image/clip

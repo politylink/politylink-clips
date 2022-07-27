@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from './speakerCardGrid.module.css';
 import SpeakerCard from "../cards/speakerCard";
-import {buildSpeakerImageUrl, buildSpeakerUrl} from "../../utils/url";
+import {buildSpeakerImageUrl, buildMemberUrl} from "../../utils/url";
 
 const SpeakerCardGrid = ({title, speakers}) => {
     return (
@@ -15,7 +15,7 @@ const SpeakerCardGrid = ({title, speakers}) => {
                             name={speaker.name}
                             group={speaker.group}
                             block={speaker.block}
-                            speakerUrl={buildSpeakerUrl()}
+                            speakerUrl={buildMemberUrl(speaker.memberId)}
                             imageUrl={buildSpeakerImageUrl()}
                         />
                     ))
