@@ -23,5 +23,11 @@ module.exports = {
                 path: `${__dirname}/data/member/`,
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/data/topic/`,
+            },
+        },
     ],
 }
