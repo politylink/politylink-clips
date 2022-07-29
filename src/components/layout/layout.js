@@ -8,7 +8,7 @@ const Layout = ({children}) => {
     return (
         <div className={styles.page}>
             <title>
-                {"Clips｜国会は、メディアだ。"}
+                {"Clips｜国会を、おもしろく。"}
             </title>
             <Header/>
             <main className={styles.main}>

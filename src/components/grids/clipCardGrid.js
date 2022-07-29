@@ -4,11 +4,13 @@ import * as subStyles from './clipCardGrid.sub.module.css';
 import ClipCard from "../cards/clipCard";
 import {buildClipImageUrl, buildClipUrl, buildSpeakerImageUrl} from "../../utils/url";
 
-const ClipCardGrid = ({title, clips, isSub = false}) => {
+const ClipCardGrid = ({clips, title = undefined, isSub = false}) => {
     const styles = isSub ? subStyles : mainStyles;
     return (
         <div className={styles.container}>
-            <p className={styles.title}>{title}</p>
+            {title &&
+                <p className={styles.title}>{title}</p>
+            }
             <div className={styles.grid}>
                 {
                     clips.map(clip => (

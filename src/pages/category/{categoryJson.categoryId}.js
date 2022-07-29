@@ -24,7 +24,8 @@ export const query = graphql`
     }
     allClipJson (
         filter: {clip: {categoryId: {eq: $categoryId}}},
-        sort: {fields: [clip___date, clip___clipId], order: [DESC, ASC]}
+        sort: {fields: [clip___date, clip___clipId], order: [DESC, ASC]},
+        limit: 100,
     ) {
       nodes {
         id

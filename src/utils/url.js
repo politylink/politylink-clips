@@ -14,3 +14,15 @@ export const buildMemberUrl = (member_id) => {
 export const buildSpeakerImageUrl = () => {
     return '/image/anonymous.png'
 }
+
+export const buildCategoryImageUrl = (category_id) => {
+    return `/image/category/${category_id}.png`
+}
+
+export const buildTopicUrl = (topic_id) => {
+    return `/topic/${topic_id}`
+}
+
+export const buildAbsoluteUrl = (path) => {
+    return `https://clips.politylink.jp${path}`
+}

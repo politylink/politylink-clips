@@ -1,0 +1,30 @@
+
+.top {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.top-left {
+    width: 60%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.top-right {
+    width: 40%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 840px) {
+    .top-left {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .top-right {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
