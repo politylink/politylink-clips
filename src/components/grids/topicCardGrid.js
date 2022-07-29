@@ -11,6 +11,7 @@ const TopicCardGrid = ({title, topics}) => {
                 {
                     topics.map(topic => (
                         <TopicCard
+                            key={topic.title}
                             title={topic.title}
                             imageUrl={buildCategoryImageUrl(topic.categoryId)}
                             topicUrl={buildTopicUrl(topic.topicId)}

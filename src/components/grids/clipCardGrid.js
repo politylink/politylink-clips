@@ -22,8 +22,8 @@ const ClipCardGrid = ({clips, title = undefined, isSub = false}) => {
                             meeting={clip.meeting}
                             clipUrl={buildClipUrl(clip.clipId)}
                             imageUrl={buildClipImageUrl(clip.clipId)}
-                            speakerName={clip.speaker.name}
-                            speakerInfo={clip.speaker.info}
+                            speakerName={clip.member.name}
+                            speakerInfo={clip.member.group}
                             speakerImageUrl={buildSpeakerImageUrl()}
                         />
                     ))

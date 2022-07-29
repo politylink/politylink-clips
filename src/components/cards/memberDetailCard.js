@@ -3,7 +3,7 @@ import * as styles from './memberDetailCard.module.css';
 import Share from "../parts/share";
 import Follow from "../parts/follow";
 
-const MemberDetailCard = ({name, group, block, summary, imageUrl, memberUrl, refUrl}) => {
+const MemberDetailCard = ({name, group, block, summary, imageUrl, shareUrl, refUrl}) => {
     return (
         <div className={styles.card}>
             <div className={styles.header}>
@@ -11,23 +11,26 @@ const MemberDetailCard = ({name, group, block, summary, imageUrl, memberUrl, ref
                 <div className={styles.speaker}>
                     <p className={styles.name}>{name}</p>
                     <div className={styles.info}>
-                        <p className={styles.infoText}>{'自由民主党'}</p>
-                        <p className={styles.infoText}>{'東京都'}</p>
+                        <p className={styles.infoText}>{group}</p>
+                        <p className={styles.infoText}>{block}</p>
                     </div>
                 </div>
                 <Follow/>
             </div>
             <div className={styles.summary}>
-                <p>{'吾輩は猫である。'}</p>
+                <p className={styles.summaryText}>{summary}</p>
+                <a href={refUrl} target="_blank" rel="noopener noreferrer">
+                    <p className={styles.summaryLink}>{'参議院議員情報より'}</p>
+                </a>
             </div>
             <div className={styles.share}>
                 <Share
                     title={`${name}議員の国会クリップをチェックしよう`}
-                    url={memberUrl}
+                    url={shareUrl}
                 />
             </div>
         </div>
-    )
+)
 }
 
 export default MemberDetailCard

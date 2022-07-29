@@ -1,13 +1,13 @@
 import * as React from "react";
-import * as styles from './speakerCard.module.css';
+import * as styles from './memberCard.module.css';
 
 import {Link} from "gatsby";
 import Follow from "../parts/follow";
 
-const SpeakerCard = ({name, group, block, speakerUrl, imageUrl}) => {
+const MemberCard = ({name, group, block, memberUrl, imageUrl}) => {
     return (
         <div className={styles.card}>
-            <Link to={speakerUrl} className={styles.speaker}>
+            <Link to={memberUrl} className={styles.member}>
                 <img src={imageUrl} alt={"face"} className={styles.image}/>
                 <div className={styles.detail}>
                     <p className={styles.name}>{name}</p>
@@ -22,4 +22,4 @@ const SpeakerCard = ({name, group, block, speakerUrl, imageUrl}) => {
     )
 }
 
-export default SpeakerCard
+export default MemberCard

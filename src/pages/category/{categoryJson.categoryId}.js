@@ -35,9 +35,11 @@ export const query = graphql`
           date
           house
           meeting
-          speaker {
+          member {
             name
-            info
+            group
+            block
+            imageUrl
           }
         }
       }

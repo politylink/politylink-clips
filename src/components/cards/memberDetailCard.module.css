@@ -8,7 +8,6 @@
 .header {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 .share {
@@ -20,6 +19,7 @@
     object-fit: cover;
     width: 80px;
     height: 80px;
+    border-radius: 50%;
 }
 
 .speaker {
@@ -46,8 +46,24 @@
 
 .summary {
     margin: 10px 20px;
+}
+
+.summary-text {
     font-size: 14px;
     color: #333333;
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+}
+
+.summary-link {
+    text-decoration: underline;
+    color: #333333;
+    font-size: 12px;
+    margin: 3px 0;
+    text-align: end;
 }
 
 

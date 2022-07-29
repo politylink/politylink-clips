@@ -6,13 +6,12 @@ import {graphql} from "gatsby";
 import ClipDetailCard from "../../components/cards/clipDetailCard";
 import ClipCardGrid from "../../components/grids/clipCardGrid";
 import SpeechCardGrid from "../../components/grids/speechCardGrid";
-import SpeakerCardGrid from "../../components/grids/speakerCardGrid";
+import MemberCardGrid from "../../components/grids/memberCardGrid";
 import {buildClipImageUrl} from "../../utils/url";
 
 const ClipPage = ({data}) => {
     const clip = data.clipJson.clip
     const speeches = data.clipJson.speeches
-    const speakers = data.clipJson.speakers
     const clips = data.clipJson.clips
 
     return (
@@ -33,9 +32,9 @@ const ClipPage = ({data}) => {
                     />
                 </div>
                 <div className={styles.right}>
-                    <SpeakerCardGrid
-                        title={"発言者"}
-                        speakers={speakers}
+                    <MemberCardGrid
+                        title={"質問者"}
+                        members={[clip.member]}
                     />
                     <ClipCardGrid
                         title={"関連クリップ"}
@@ -60,6 +59,13 @@ export const query = graphql`
         meeting
         videoUrl
         minutesUrl
+        member {
+          memberId
+          name
+          group
+          block
+          imageUrl
+        }
       }
       speeches {
         speaker {
@@ -68,21 +74,17 @@ export const query = graphql`
         }
         speech
       }
-      speakers {
-        memberId
-        name
-        group
-        block
-      }
       clips {
         clipId
         title
         date
         house
         meeting
-        speaker {
+        member {
           name
-          info
+          group
+          block
+          imageUrl
         }
       }
     }

@@ -3,7 +3,7 @@ import * as styles from './topicDetailCard.module.css';
 import Share from "../parts/share";
 import Follow from "../parts/follow";
 
-const TopicDetailCard = ({title, imageUrl, topicUrl}) => {
+const TopicDetailCard = ({title, imageUrl, shareUrl}) => {
     return (
         <div className={styles.card}>
             <div className={styles.header}>
@@ -14,7 +14,7 @@ const TopicDetailCard = ({title, imageUrl, topicUrl}) => {
             <div className={styles.share}>
                 <Share
                     title={`「${title}」に関する国会クリップをチェックしよう`}
-                    url={topicUrl}
+                    url={shareUrl}
                 />
             </div>
         </div>

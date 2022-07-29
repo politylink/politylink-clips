@@ -22,8 +22,12 @@ const MemberPage = ({data}) => {
                 <div className={styles.topLeft}>
                     <MemberDetailCard
                         name={member.name}
-                        imageUrl={buildMemberImageUrl(member.memberId)}
-                        memberUrl={buildAbsoluteUrl(buildMemberUrl(member.memberId))}
+                        group={member.group}
+                        block={member.block}
+                        summary={member.summary}
+                        imageUrl={member.imageUrl}
+                        refUrl={member.refUrl}
+                        shareUrl={buildAbsoluteUrl(buildMemberUrl(member.memberId))}
                     />
                 </div>
                 <div className={styles.topRight}>
@@ -45,9 +49,14 @@ export const query = graphql`
     memberJson (id: {eq: $id}) {
         memberId
         name
+        group
+        block
+        summary
+        refUrl
+        imageUrl
     }
     allClipJson (
-        filter: {clip: {speaker: {memberId: {eq: $memberId}}}}, 
+        filter: {clip: {member: {memberId: {eq: $memberId}}}}, 
         sort: {fields: [clip___date, clip___clipId], order: [DESC, ASC]}
     ) {
       nodes {
@@ -58,9 +67,11 @@ export const query = graphql`
           date
           house
           meeting
-          speaker {
+          member {
             name
-            info
+            group
+            block
+            imageUrl
           }
         }
       }
