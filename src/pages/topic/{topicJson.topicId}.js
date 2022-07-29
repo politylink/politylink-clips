@@ -5,10 +5,16 @@ import ClipCardGrid from "../../components/grids/clipCardGrid";
 import TopicDetailCard from "../../components/cards/topicDetailCard";
 import {buildAbsoluteUrl, buildCategoryImageUrl, buildTopicUrl} from "../../utils/url";
 import * as styles from './topicPage.module.css'
+import TopicCardGrid from "../../components/grids/topicCardGrid";
 
 const TopicPage = ({data}) => {
     const topic = data.topicJson
     const clips = data.allClipJson.nodes.map(node => node.clip)
+    const topics = [
+        {'topicId': 10, 'title': 'デジタル化', 'categoryId': 4},
+        {'topicId': 13, 'title': 'トリガー条項', 'categoryId': 2},
+        {'topicId': 14, 'title': '脱炭素', 'categoryId': 5},
+    ]
     return (
         <Layout>
             <div className={styles.top}>
@@ -20,7 +26,10 @@ const TopicPage = ({data}) => {
                     />
                 </div>
                 <div className={styles.topRight}>
-                    <p>right</p>
+                    <TopicCardGrid
+                        title={'関連トピック'}
+                        topics={topics}
+                    />
                 </div>
             </div>
             <ClipCardGrid

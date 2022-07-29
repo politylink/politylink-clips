@@ -8,6 +8,8 @@
 .title {
     margin: 0;
     padding: 10px;
+    font-weight: 700;
+    font-size: 20px;
 }
 
 .grid {

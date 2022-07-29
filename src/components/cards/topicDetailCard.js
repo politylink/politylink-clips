@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as styles from './topicDetailCard.module.css';
 import Share from "../parts/share";
+import Follow from "../parts/follow";
 
 const TopicDetailCard = ({title, imageUrl, topicUrl}) => {
     return (
@@ -8,9 +9,7 @@ const TopicDetailCard = ({title, imageUrl, topicUrl}) => {
             <div className={styles.header}>
                 <img src={imageUrl} alt={"image"} className={styles.image}/>
                 <p className={styles.title}>{title}</p>
-                <div className={styles.follow}>
-                    <p className={styles.followText}>{"フォローする"}</p>
-                </div>
+                <Follow/>
             </div>
             <div className={styles.share}>
                 <Share

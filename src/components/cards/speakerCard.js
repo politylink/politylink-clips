@@ -2,6 +2,7 @@ import * as React from "react";
 import * as styles from './speakerCard.module.css';
 
 import {Link} from "gatsby";
+import Follow from "../parts/follow";
 
 const SpeakerCard = ({name, group, block, speakerUrl, imageUrl}) => {
     return (
@@ -16,9 +17,7 @@ const SpeakerCard = ({name, group, block, speakerUrl, imageUrl}) => {
                     </div>
                 </div>
             </Link>
-            <div className={styles.follow}>
-                <p className={styles.followText}>{"フォローする"}</p>
-            </div>
+            <Follow/>
         </div>
     )
 }

@@ -11,6 +11,10 @@ export const buildMemberUrl = (member_id) => {
     return `/member/${member_id}`
 }
 
+export const buildMemberImageUrl = (member_id) => {
+    return '/image/anonymous.png'
+}
+
 export const buildSpeakerImageUrl = () => {
     return '/image/anonymous.png'
 }

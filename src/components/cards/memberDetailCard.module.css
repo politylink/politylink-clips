@@ -22,12 +22,34 @@
     height: 80px;
 }
 
-.title {
-    font-weight: 700;
+.speaker {
     flex-grow: 1;
     margin: 0 20px;
-    font-size: 24px;
 }
+
+.name {
+    font-weight: 700;
+    font-size: 24px;
+    margin: 0;
+}
+
+.info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info-text {
+    margin: 0 5px 0 0;
+    font-size: 14px;
+    color: #848484;
+}
+
+.summary {
+    margin: 10px 20px;
+    font-size: 14px;
+    color: #333333;
+}
+
 
 @media screen and (max-width: 840px) {
     .image {
@@ -35,7 +57,11 @@
         height: 50px;
     }
 
-    .title {
+    .name {
         font-size: 20px;
+    }
+
+    .follow-text {
+        font-size: 14px;
     }
 }
