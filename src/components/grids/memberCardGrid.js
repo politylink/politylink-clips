@@ -3,10 +3,9 @@ import * as styles from './memberCardGrid.module.css';
 import MemberCard from "../cards/memberCard";
 import {buildMemberUrl} from "../../utils/url";
 
-const MemberCardGrid = ({title, members}) => {
+const MemberCardGrid = ({members}) => {
     return (
         <div className={styles.container}>
-            <p className={styles.title}>{title}</p>
             <div className={styles.grid}>
                 {
                     members.map(member => (

@@ -14,5 +14,5 @@
 .grid {
     display: flex;
     flex-wrap: wrap;
-    margin: 10px;
+    margin: 5px 10px 0 10px;
 }

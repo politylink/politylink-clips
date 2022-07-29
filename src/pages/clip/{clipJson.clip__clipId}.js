@@ -8,11 +8,14 @@ import ClipCardGrid from "../../components/grids/clipCardGrid";
 import SpeechCardGrid from "../../components/grids/speechCardGrid";
 import MemberCardGrid from "../../components/grids/memberCardGrid";
 import {buildClipImageUrl} from "../../utils/url";
+import TopicDetailCard from "../../components/cards/topicDetailCard";
+import TopicCardGrid from "../../components/grids/topicCardGrid";
 
 const ClipPage = ({data}) => {
     const clip = data.clipJson.clip
     const speeches = data.clipJson.speeches
     const clips = data.clipJson.clips
+    const topics = data.clipJson.topics
 
     return (
         <Layout>
@@ -33,11 +36,13 @@ const ClipPage = ({data}) => {
                 </div>
                 <div className={styles.right}>
                     <MemberCardGrid
-                        title={"質問者"}
                         members={[clip.member]}
                     />
+                    <TopicCardGrid
+                        title={"関連トピック"}
+                        topics={topics}
+                    />
                     <ClipCardGrid
-                        title={"関連クリップ"}
                         clips={clips}
                         isSub={true}
                     />
@@ -86,6 +91,11 @@ export const query = graphql`
           block
           imageUrl
         }
+      }
+      topics {
+        topicId
+        title
+        categoryId
       }
     }
   }
