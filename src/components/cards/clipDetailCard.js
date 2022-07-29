@@ -1,8 +1,9 @@
 import * as React from "react";
 import * as styles from './clipDetailCard.module.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import Share from "../parts/share";
 
-const ClipDetailCard = ({title, date, house, meeting, imageUrl, minutesUrl, videoUrl}) => {
+const ClipDetailCard = ({title, date, house, meeting, imageUrl, minutesUrl, videoUrl, shareUrl}) => {
     const subTitle = `${date} ${house} ${meeting}`
     return (
         <div className={styles.card}>
@@ -20,6 +21,7 @@ const ClipDetailCard = ({title, date, house, meeting, imageUrl, minutesUrl, vide
                         <p className={styles.linkItemText}>{"会議録を読む"}</p>
                     </a>
                 </div>
+                <Share/>
             </div>
         </div>
     )

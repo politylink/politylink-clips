@@ -34,11 +34,6 @@
 }
 
 .info {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.info-text {
     margin: 0 5px 0 0;
     font-size: 14px;
     color: #848484;

@@ -23,7 +23,7 @@ const ClipCardGrid = ({clips, title = undefined, isSub = false}) => {
                             clipUrl={buildClipUrl(clip.clipId)}
                             imageUrl={buildClipImageUrl(clip.clipId)}
                             speakerName={clip.member.name}
-                            speakerInfo={clip.member.group}
+                            speakerInfo={`${clip.member.group}・${clip.member.block}`}
                             speakerImageUrl={buildSpeakerImageUrl()}
                         />
                     ))

@@ -13,8 +13,7 @@ const MemberCardGrid = ({title, members}) => {
                         <MemberCard
                             key={member.name}
                             name={member.name}
-                            group={member.group}
-                            block={member.block}
+                            info={`${member.group}・${member.block}`}
                             memberUrl={buildMemberUrl(member.memberId)}
                             imageUrl={member.imageUrl}
                         />

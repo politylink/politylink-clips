@@ -3,17 +3,14 @@ import * as styles from './memberDetailCard.module.css';
 import Share from "../parts/share";
 import Follow from "../parts/follow";
 
-const MemberDetailCard = ({name, group, block, summary, imageUrl, shareUrl, refUrl}) => {
+const MemberDetailCard = ({name, info, summary, imageUrl, shareUrl, refUrl}) => {
     return (
         <div className={styles.card}>
             <div className={styles.header}>
                 <img src={imageUrl} alt={"image"} className={styles.image}/>
                 <div className={styles.speaker}>
                     <p className={styles.name}>{name}</p>
-                    <div className={styles.info}>
-                        <p className={styles.infoText}>{group}</p>
-                        <p className={styles.infoText}>{block}</p>
-                    </div>
+                    <p className={styles.info}>{info}</p>
                 </div>
                 <Follow/>
             </div>

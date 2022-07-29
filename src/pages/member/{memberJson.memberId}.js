@@ -22,8 +22,7 @@ const MemberPage = ({data}) => {
                 <div className={styles.topLeft}>
                     <MemberDetailCard
                         name={member.name}
-                        group={member.group}
-                        block={member.block}
+                        info={`${member.group}・${member.block}`}
                         summary={member.summary}
                         imageUrl={member.imageUrl}
                         refUrl={member.refUrl}
