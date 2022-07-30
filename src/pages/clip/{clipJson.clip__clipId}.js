@@ -7,15 +7,14 @@ import ClipDetailCard from "../../components/cards/clipDetailCard";
 import ClipCardGrid from "../../components/grids/clipCardGrid";
 import SpeechCardGrid from "../../components/grids/speechCardGrid";
 import MemberCardGrid from "../../components/grids/memberCardGrid";
-import {buildClipImageUrl} from "../../utils/url";
-import TopicDetailCard from "../../components/cards/topicDetailCard";
+import {buildAbsoluteUrl, buildClipImageUrl, buildClipUrl} from "../../utils/url";
 import TopicCardGrid from "../../components/grids/topicCardGrid";
 
 const ClipPage = ({data}) => {
     const clip = data.clipJson.clip
     const speeches = data.clipJson.speeches
-    const clips = data.clipJson.clips
     const topics = data.clipJson.topics
+    const clips = data.clipJson.clips
 
     return (
         <Layout>
@@ -29,6 +28,7 @@ const ClipPage = ({data}) => {
                         imageUrl={buildClipImageUrl(clip.clipId)}
                         videoUrl={clip.videoUrl}
                         minutesUrl={clip.minutesUrl}
+                        shareUrl={buildAbsoluteUrl(buildClipUrl(clip.clipId))}
                     />
                     <SpeechCardGrid
                         speeches={speeches}
@@ -38,14 +38,18 @@ const ClipPage = ({data}) => {
                     <MemberCardGrid
                         members={[clip.member]}
                     />
-                    <TopicCardGrid
-                        title={"関連トピック"}
-                        topics={topics}
-                    />
-                    <ClipCardGrid
-                        clips={clips}
-                        isSub={true}
-                    />
+                    {topics && topics.length > 0 &&
+                        <TopicCardGrid
+                            title={"関連トピック"}
+                            topics={topics}
+                        />
+                    }
+                    {clips && clips.length > 0 &&
+                        <ClipCardGrid
+                            clips={clips}
+                            isSub={true}
+                        />
+                    }
                 </div>
             </div>
         </Layout>

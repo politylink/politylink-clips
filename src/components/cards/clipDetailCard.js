@@ -21,7 +21,10 @@ const ClipDetailCard = ({title, date, house, meeting, imageUrl, minutesUrl, vide
                         <p className={styles.linkItemText}>{"会議録を読む"}</p>
                     </a>
                 </div>
-                <Share/>
+                <Share
+                    title={title}
+                    url={shareUrl}
+                />
             </div>
         </div>
     )
