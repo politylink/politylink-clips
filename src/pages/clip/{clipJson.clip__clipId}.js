@@ -47,7 +47,7 @@ const ClipPage = ({data}) => {
                     {clips && clips.length > 0 &&
                         <ClipCardGrid
                             clips={clips}
-                            isSub={true}
+                            isMain={false}
                         />
                     }
                 </div>
