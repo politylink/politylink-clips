@@ -3,20 +3,25 @@ import * as styles from './header.module.css'
 import {graphql, Link, useStaticQuery} from 'gatsby'
 
 import "../../utils/fontawesome";
+import {buildCategoryUrl} from "../../utils/url";
 
 const Header = () => {
     const data = useStaticQuery(
         graphql`
             query {
-                allCategoryJson {
+                allCategoryJson (sort: {fields: category___categoryId}) {
                     nodes {
-                        categoryId
-                        name
+                        category {
+                            categoryId
+                            title
+                        }
                     }
                 }
             }
         `
     )
+    const categories = data.allCategoryJson.nodes.map(node => node.category)
+
     return (
         <header>
             <div className={styles.header}>
@@ -32,11 +37,11 @@ const Header = () => {
                 <ul className={styles.navLinks}>
                     <Link to="/" key={0} className={styles.navLinkText}>{"ホーム"}</Link>
                     {
-                        data.allCategoryJson.nodes.map(node => (
-                            <Link to={`/category/${node.categoryId}`}
-                                  key={node.categoryId}
+                        categories.map(category => (
+                            <Link to={buildCategoryUrl(category.categoryId)}
+                                  key={category.categoryId}
                                   className={styles.navLinkText}>
-                                {node.name}
+                                {category.title}
                             </Link>
                         ))
                     }

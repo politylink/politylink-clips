@@ -8,25 +8,25 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/data/clip/`,
+                path: `${__dirname}/artifact/clip/`,
             },
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/data/category/`,
+                path: `${__dirname}/artifact/category/`,
             },
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/data/member/`,
+                path: `${__dirname}/artifact/member/`,
             },
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/data/topic/`,
+                path: `${__dirname}/artifact/topic/`,
             },
         },
     ],

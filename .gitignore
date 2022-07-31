@@ -2,8 +2,6 @@ node_modules/
 .cache/
 public
 .idea/
-data/clip
-data/member
-data/topic
+artifact
 static/image/clip
 .DS_Store

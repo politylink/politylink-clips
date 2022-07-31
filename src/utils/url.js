@@ -19,6 +19,10 @@ export const buildSpeakerImageUrl = () => {
     return '/image/anonymous.png'
 }
 
+export const buildCategoryUrl = (category_id) => {
+    return `/category/${category_id}`
+}
+
 export const buildCategoryImageUrl = (category_id) => {
     return `/image/category/${category_id}.png`
 }
