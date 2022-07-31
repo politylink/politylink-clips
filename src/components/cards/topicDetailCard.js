@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from './topicDetailCard.module.css';
-import Share from "../parts/share";
-import Follow from "../parts/follow";
+import ShareButtons from "../parts/shareButtons";
+import FollowButton from "../parts/followButton";
 
 const TopicDetailCard = ({title, imageUrl, shareUrl}) => {
     return (
@@ -9,10 +9,10 @@ const TopicDetailCard = ({title, imageUrl, shareUrl}) => {
             <div className={styles.header}>
                 <img src={imageUrl} alt={"image"} className={styles.image}/>
                 <p className={styles.title}>{title}</p>
-                <Follow/>
+                <FollowButton/>
             </div>
             <div className={styles.share}>
-                <Share
+                <ShareButtons
                     title={`「${title}」に関する国会クリップをチェックしよう`}
                     url={shareUrl}
                 />

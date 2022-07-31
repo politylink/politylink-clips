@@ -9,9 +9,9 @@ import {
     HatenaIcon,
     HatenaShareButton
 } from "react-share";
-import * as styles from "./share.module.css"
+import * as styles from "./shareButtons.module.css"
 
-const Share = ({title, url}) => {
+const ShareButtons = ({title, url}) => {
     const iconSize = 40;
     const iconStyle = {fill: 'white'}
     const iconFill = '#333333'
@@ -35,4 +35,4 @@ const Share = ({title, url}) => {
     )
 }
 
-export default Share
+export default ShareButtons

@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as styles from './categoryDetailCard.module.css';
-import Share from "../parts/share";
+import ShareButtons from "../parts/shareButtons";
 
 const CategoryDetailCard = ({title, desc, imageUrl, shareUrl}) => {
     return (
@@ -13,7 +13,7 @@ const CategoryDetailCard = ({title, desc, imageUrl, shareUrl}) => {
                 <p className={styles.descText}>{desc}</p>
             </div>
             <div className={styles.share}>
-                <Share
+                <ShareButtons
                     title={`「${title}」に関する国会クリップをチェックしよう`}
                     url={shareUrl}
                 />

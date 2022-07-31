@@ -4,6 +4,7 @@ import {graphql, Link, useStaticQuery} from 'gatsby'
 
 import "../../utils/fontawesome";
 import {buildCategoryUrl} from "../../utils/url";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const Header = () => {
     const data = useStaticQuery(
@@ -35,7 +36,7 @@ const Header = () => {
             </div>
             <nav>
                 <ul className={styles.navLinks}>
-                    <Link to="/" key={0} className={styles.navLinkText}>{"ホーム"}</Link>
+                    <Link to="/" key={'ホーム'} className={styles.navLinkText}>{"ホーム"}</Link>
                     {
                         categories.map(category => (
                             <Link to={buildCategoryUrl(category.categoryId)}
@@ -45,6 +46,9 @@ const Header = () => {
                             </Link>
                         ))
                     }
+                    <Link to="/search" key={'search'} className={styles.navLinkText}>
+                        <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" size="lg"/>
+                    </Link>
                 </ul>
             </nav>
         </header>

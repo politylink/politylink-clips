@@ -3,6 +3,7 @@ import {
     faEnvelopeOpen,
     faFileVideo,
     faBook,
+    faMagnifyingGlass
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -18,6 +19,7 @@ library.add(
     faEnvelopeOpen,
     faFileVideo,
     faBook,
+    faMagnifyingGlass,
     faTwitter,
     faInstagram
 );

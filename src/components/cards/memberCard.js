@@ -2,7 +2,7 @@ import * as React from "react";
 import * as styles from './memberCard.module.css';
 
 import {Link} from "gatsby";
-import Follow from "../parts/follow";
+import FollowButton from "../parts/followButton";
 
 const MemberCard = ({name, info, memberUrl, imageUrl}) => {
     return (
@@ -14,7 +14,7 @@ const MemberCard = ({name, info, memberUrl, imageUrl}) => {
                     <p className={styles.info}>{info}</p>
                 </div>
             </Link>
-            <Follow/>
+            <FollowButton/>
         </div>
     )
 }

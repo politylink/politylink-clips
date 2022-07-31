@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from './memberDetailCard.module.css';
-import Share from "../parts/share";
-import Follow from "../parts/follow";
+import ShareButtons from "../parts/shareButtons";
+import FollowButton from "../parts/followButton";
 
 const MemberDetailCard = ({name, info, summary, imageUrl, shareUrl, refUrl}) => {
     return (
@@ -12,7 +12,7 @@ const MemberDetailCard = ({name, info, summary, imageUrl, shareUrl, refUrl}) => 
                     <p className={styles.name}>{name}</p>
                     <p className={styles.info}>{info}</p>
                 </div>
-                <Follow/>
+                <FollowButton/>
             </div>
             <div className={styles.summary}>
                 <p className={styles.summaryText}>{summary}</p>
@@ -21,7 +21,7 @@ const MemberDetailCard = ({name, info, summary, imageUrl, shareUrl, refUrl}) => 
                 </a>
             </div>
             <div className={styles.share}>
-                <Share
+                <ShareButtons
                     title={`${name}議員の国会クリップをチェックしよう`}
                     url={shareUrl}
                 />
