@@ -9,12 +9,8 @@ import TopicCardGrid from "../../components/grids/topicCardGrid";
 
 const MemberPage = ({data}) => {
     const member = data.memberJson.member
+    const topics = data.memberJson.topics
     const clips = data.allClipJson.nodes.map(node => node.clip)
-    const topics = [
-        {'topicId': 10, 'title': 'デジタル化', 'categoryId': 4},
-        {'topicId': 13, 'title': 'トリガー条項', 'categoryId': 2},
-        {'topicId': 14, 'title': '脱炭素', 'categoryId': 5},
-    ]
 
     return (
         <Layout>
@@ -30,10 +26,12 @@ const MemberPage = ({data}) => {
                     />
                 </div>
                 <div className={styles.topRight}>
-                    <TopicCardGrid
-                        title={'関連トピック'}
-                        topics={topics}
-                    />
+                    {topics && topics.length > 0 &&
+                        <TopicCardGrid
+                            title={'関連トピック'}
+                            topics={topics.slice(0, 5)}
+                        />
+                    }
                 </div>
             </div>
             <ClipCardGrid
@@ -54,6 +52,11 @@ export const query = graphql`
         summary
         refUrl
         imageUrl
+      }
+      topics {
+        topicId
+        title
+        categoryId
       }
     }
     allClipJson (

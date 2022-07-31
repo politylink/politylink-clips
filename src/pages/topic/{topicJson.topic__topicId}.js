@@ -9,12 +9,8 @@ import TopicCardGrid from "../../components/grids/topicCardGrid";
 
 const TopicPage = ({data}) => {
     const topic = data.topicJson.topic
+    const topics = data.topicJson.topics
     const clips = data.allClipJson.nodes.map(node => node.clip)
-    const topics = [
-        {'topicId': 10, 'title': 'デジタル化', 'categoryId': 4},
-        {'topicId': 13, 'title': 'トリガー条項', 'categoryId': 2},
-        {'topicId': 14, 'title': '脱炭素', 'categoryId': 5},
-    ]
     return (
         <Layout>
             <div className={styles.top}>
@@ -22,12 +18,12 @@ const TopicPage = ({data}) => {
                     <TopicDetailCard
                         title={topic.title}
                         imageUrl={buildCategoryImageUrl(topic.categoryId)}
-                        topicUrl={buildAbsoluteUrl(buildTopicUrl(topic.topicId))}
+                        shareUrl={buildAbsoluteUrl(buildTopicUrl(topic.topicId))}
                     />
                 </div>
                 <div className={styles.topRight}>
                     <TopicCardGrid
-                        title={'関連トピック'}
+                        title={'他のトピックも見る'}
                         topics={topics}
                     />
                 </div>
@@ -43,6 +39,11 @@ export const query = graphql`
   query ($id: String, $topic__topicId: Int) {
     topicJson (id: {eq: $id}) {
       topic {
+        topicId
+        title
+        categoryId
+      }
+      topics {
         topicId
         title
         categoryId
