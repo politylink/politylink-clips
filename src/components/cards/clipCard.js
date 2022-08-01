@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as styles from './clipCard.module.css';
+import {Link} from "gatsby";
 
 const ClipCard = ({
                       title,
@@ -11,13 +12,11 @@ const ClipCard = ({
                       speakerImageUrl,
                       speakerName,
                       speakerInfo,
-                      isExternal = false,
                   }) => {
     const subTitle = `${date} ${house} ${meeting}`
-    const target = isExternal ? "_blank" : "_self"
 
     return (
-        <a href={clipUrl} target={target} className={styles.card}>
+        <Link to={clipUrl} className={styles.card}>
             <img src={imageUrl} alt={"thumbnail"} className={styles.image}/>
             <div className={styles.body}>
                 <p className={styles.title}>{title}</p>
@@ -28,7 +27,7 @@ const ClipCard = ({
                     <p className={styles.speakerInfo}>{speakerInfo}</p>
                 </div>
             </div>
-        </a>
+        </Link>
     )
 }
 

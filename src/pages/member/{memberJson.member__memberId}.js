@@ -5,7 +5,7 @@ import ClipCardGrid from "../../components/grids/clipCardGrid";
 import * as styles from "./memberPage.module.css";
 import MemberDetailCard from "../../components/cards/memberDetailCard";
 import {buildAbsoluteUrl, buildMemberUrl} from "../../utils/url";
-import TopicCardGrid from "../../components/grids/topicCardGrid";
+import TopicChipGrid from "../../components/grids/topicChipGrid";
 
 const MemberPage = ({data}) => {
     const member = data.memberJson.member
@@ -27,7 +27,7 @@ const MemberPage = ({data}) => {
                 </div>
                 <div className={styles.topRight}>
                     {topics && topics.length > 0 &&
-                        <TopicCardGrid
+                        <TopicChipGrid
                             title={'関連トピック'}
                             topics={topics.slice(0, 5)}
                         />

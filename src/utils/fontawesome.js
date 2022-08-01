@@ -6,6 +6,7 @@ import {
     faMagnifyingGlass,
     faAngleDown,
     faAngleUp,
+    faAngleRight,
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -24,6 +25,7 @@ library.add(
     faMagnifyingGlass,
     faAngleDown,
     faAngleUp,
+    faAngleRight,
     faTwitter,
     faInstagram,
 );

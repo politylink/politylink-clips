@@ -1,9 +1,9 @@
 import * as React from "react";
-import * as styles from './topicCardGrid.module.css';
+import * as styles from './topicChipGrid.module.css';
 import {buildCategoryImageUrl, buildTopicUrl} from "../../utils/url";
 import TopicChip from "../cards/topicChip";
 
-const TopicCardGrid = ({topics, title = undefined, isWhite = true}) => {
+const TopicChipGrid = ({topics, title = undefined, isWhite = true}) => {
     return (
         <div className={isWhite ? styles.containerWhite : styles.container}>
             {title &&
@@ -25,4 +25,4 @@ const TopicCardGrid = ({topics, title = undefined, isWhite = true}) => {
     )
 }
 
-export default TopicCardGrid
+export default TopicChipGrid

@@ -8,7 +8,7 @@ import ClipCardGrid from "../../components/grids/clipCardGrid";
 import SpeechCardGrid from "../../components/grids/speechCardGrid";
 import MemberCardGrid from "../../components/grids/memberCardGrid";
 import {buildAbsoluteUrl, buildClipImageUrl, buildClipUrl} from "../../utils/url";
-import TopicCardGrid from "../../components/grids/topicCardGrid";
+import TopicChipGrid from "../../components/grids/topicChipGrid";
 
 const ClipPage = ({data}) => {
     const clip = data.clipJson.clip
@@ -39,7 +39,7 @@ const ClipPage = ({data}) => {
                         members={[clip.member]}
                     />
                     {topics && topics.length > 0 &&
-                        <TopicCardGrid
+                        <TopicChipGrid
                             title={"関連トピック"}
                             topics={topics}
                         />

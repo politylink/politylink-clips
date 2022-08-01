@@ -25,7 +25,6 @@ const ClipCardGrid = ({clips, title = undefined, isMain = true}) => {
                             speakerName={clip.member.name}
                             speakerInfo={`${clip.member.group}・${clip.member.block}`}
                             speakerImageUrl={buildSpeakerImageUrl()}
-                            isExternal={isMain}
                         />
                     ))
                 }

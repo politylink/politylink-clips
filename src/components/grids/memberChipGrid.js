@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as styles from './topicCardGrid.module.css';
+import * as styles from './topicChipGrid.module.css';
 import {buildMemberUrl, buildSpeakerImageUrl} from "../../utils/url";
 import MemberChip from "../cards/memberChip";
 

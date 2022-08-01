@@ -11,7 +11,7 @@ const SearchBox = ({currentQuery, currentFilterId, filterLabels, handleQueryChan
             <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" size="lg" className={styles.icon}/>
             <input
                 type="text"
-                placeholder={"トピック・議員名を検索"}
+                placeholder={"検索"}
                 value={currentQuery}
                 onChange={handleQueryChange}
                 className={styles.input}

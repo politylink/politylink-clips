@@ -1,31 +1,31 @@
 .container {
     display: flex;
     align-items: center;
-    width: 100%;
+    flex-grow: 1;
+    max-width: 700px;
     height: 3rem;
     background-color: white;
     box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     position: relative;
-    margin: 50px 0;
 }
 
 .icon {
-    margin: 0 20px;
+    margin: 0 10px;
     color: #848484;
 }
 
 .input {
     flex-grow: 1;
     font-size: 1rem;
-    padding: 0 1rem;
+    padding: 0;
     border: none;
     outline: none;
 }
 
 .toggle {
     background-color: transparent;
-    width: 200px;
+    width: 160px;
     display: flex;
     text-align: left;
     border: none;
@@ -36,7 +36,7 @@
     flex-grow: 1;
     padding: 0 10px;
     font-size: 16px;
-    color: #848484;
+    color: black;
 }
 
 .toggle-icon {
@@ -49,7 +49,7 @@
     background-color: white;
     top: 60px;
     right: 0;
-    width: 200px;
+    width: 160px;
     height: auto;
     box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
@@ -66,8 +66,6 @@
     background-color: #dfdfdf;
 }
 
-
-
 .filter-text {
     margin: 10px;
     color: #848484;
@@ -77,5 +75,6 @@
 .filter-text-selected {
     composes: filter-text;
     color: black;
+    font-weight: 700;
 }
 

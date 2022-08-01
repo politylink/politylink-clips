@@ -5,7 +5,7 @@ import ClipCardGrid from "../../components/grids/clipCardGrid";
 import TopicDetailCard from "../../components/cards/topicDetailCard";
 import {buildAbsoluteUrl, buildCategoryImageUrl, buildTopicUrl} from "../../utils/url";
 import * as styles from './topicPage.module.css'
-import TopicCardGrid from "../../components/grids/topicCardGrid";
+import TopicChipGrid from "../../components/grids/topicChipGrid";
 
 const TopicPage = ({data}) => {
     const topic = data.topicJson.topic
@@ -22,7 +22,7 @@ const TopicPage = ({data}) => {
                     />
                 </div>
                 <div className={styles.topRight}>
-                    <TopicCardGrid
+                    <TopicChipGrid
                         title={'他のトピックも見る'}
                         topics={topics}
                     />

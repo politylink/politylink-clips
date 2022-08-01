@@ -2,7 +2,7 @@ import * as React from "react"
 import {useState} from "react"
 import Layout from "../components/layout/layout";
 import SearchBox from "../components/parts/searchBox";
-import TopicCardGrid from "../components/grids/topicCardGrid";
+import TopicChipGrid from "../components/grids/topicChipGrid";
 import {graphql} from "gatsby";
 import {filterLabels, isMatchMember, isMatchTopic} from "../utils/search";
 import * as styles from './search.module.css'
@@ -46,7 +46,7 @@ const SearchPage = ({data}) => {
             </div>
             <div className={styles.result}>
                 {filteredTopics.length > 0 &&
-                    <TopicCardGrid
+                    <TopicChipGrid
                         topics={filteredTopics}
                         isWhite={false}
                     />

@@ -4,7 +4,7 @@ import Layout from "../../components/layout/layout";
 import ClipCardGrid from "../../components/grids/clipCardGrid";
 import * as styles from "../topic/topicPage.module.css";
 import {buildAbsoluteUrl, buildCategoryImageUrl, buildCategoryUrl} from "../../utils/url";
-import TopicCardGrid from "../../components/grids/topicCardGrid";
+import TopicChipGrid from "../../components/grids/topicChipGrid";
 import CategoryDetailCard from "../../components/cards/categoryDetailCard";
 
 const CategoryPage = ({data}) => {
@@ -23,7 +23,7 @@ const CategoryPage = ({data}) => {
                     />
                 </div>
                 <div className={styles.topRight}>
-                    <TopicCardGrid
+                    <TopicChipGrid
                         title={'関連トピック'}
                         topics={topics}
                     />
