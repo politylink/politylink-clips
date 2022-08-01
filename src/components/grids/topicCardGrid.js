@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from './topicCardGrid.module.css';
 import {buildCategoryImageUrl, buildTopicUrl} from "../../utils/url";
-import TopicCard from "../cards/topicCard";
+import TopicChip from "../cards/topicChip";
 
 const TopicCardGrid = ({topics, title = undefined, isWhite = true}) => {
     return (
@@ -12,7 +12,7 @@ const TopicCardGrid = ({topics, title = undefined, isWhite = true}) => {
             <div className={styles.grid}>
                 {
                     topics.map(topic => (
-                        <TopicCard
+                        <TopicChip
                             key={topic.title}
                             title={topic.title}
                             imageUrl={buildCategoryImageUrl(topic.categoryId)}

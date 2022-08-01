@@ -4,9 +4,10 @@ import Layout from "../components/layout/layout";
 import SearchBox from "../components/parts/searchBox";
 import TopicCardGrid from "../components/grids/topicCardGrid";
 import {graphql} from "gatsby";
-import {filterLabels, isFilterMatch, isQueryMatch} from "../utils/search";
+import {filterLabels, isMatchMember, isMatchTopic} from "../utils/search";
 import * as styles from './search.module.css'
 import {readLocalFilterId, readLocalQuery, storeLocalFilterId, storeLocalQuery} from "../utils/storage";
+import MemberChipGrid from "../components/grids/memberChipGrid";
 
 const SearchPage = ({data}) => {
     const [query, setQuery] = useState(readLocalQuery())
@@ -24,15 +25,19 @@ const SearchPage = ({data}) => {
     }
 
     const topics = data.allTopicJson.nodes.map(node => node.topic)
+    const members = data.allMemberJson.nodes.map(node => node.member)
     const filteredTopics = topics.filter((topic) => {
-        return isQueryMatch(query, topic) && isFilterMatch(filterId, topic)
+        return isMatchTopic(query, filterId, topic);
+    })
+    const filteredMembers = members.filter((member) => {
+        return isMatchMember(query, filterId, member);
     })
 
     return (
         <Layout>
             <div className={styles.search}>
                 <SearchBox
-                    value={query}
+                    currentQuery={query}
                     currentFilterId={filterId}
                     filterLabels={filterLabels}
                     handleQueryChange={handleQueryChange}
@@ -40,10 +45,18 @@ const SearchPage = ({data}) => {
                 />
             </div>
             <div className={styles.result}>
-                <TopicCardGrid
-                    topics={filteredTopics}
-                    isWhite={false}
-                />
+                {filteredTopics.length > 0 &&
+                    <TopicCardGrid
+                        topics={filteredTopics}
+                        isWhite={false}
+                    />
+                }
+                {filteredMembers.length > 0 &&
+                    <MemberChipGrid
+                        members={filteredMembers}
+                        isWhite={false}
+                    />
+                }
             </div>
         </Layout>
     )
@@ -63,6 +76,7 @@ export const query = graphql`
         allMemberJson {
             nodes {
                 member {
+                    memberId
                     name
                     group
                     block

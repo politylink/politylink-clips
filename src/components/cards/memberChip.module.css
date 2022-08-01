@@ -1,0 +1,29 @@
+.chip {
+    background-color: white;
+    text-decoration: none;
+    color: #333333;
+    border-radius: 12px;
+    padding: 5px 10px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #D4D4D4;
+}
+
+.image {
+    padding: 0;
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+}
+
+.title {
+    margin: 0 10px;
+}
+
+.info {
+    margin: 0;
+    font-weight: 400;
+    color: #848484;
+    font-size: 12px;
+}
