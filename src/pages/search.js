@@ -6,19 +6,19 @@ import {graphql} from "gatsby";
 import {QUERY_KEY} from "../utils/constants";
 import {isMatch} from "../utils/search";
 import * as styles from './search.module.css'
+import {readQuery, storeQuery} from "../utils/storage";
 
 export default class SearchPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            filterText: (typeof window !== 'undefined' && localStorage.getItem(QUERY_KEY)) || '',
+            filterText: readQuery()
         }
         this.handleTextInput = this.handleTextInput.bind(this);
     }
 
     handleTextInput(event) {
-        console.log(event);
-        typeof window !== 'undefined' && localStorage.setItem(QUERY_KEY, event.target.value);
+        storeQuery(event.target.value);
         this.setState({filterText: event.target.value});
     }
 
@@ -45,8 +45,8 @@ export default class SearchPage extends React.Component {
                 </div>
                 <div className={styles.result}>
                     <TopicCardGrid
-                        title={'トピック一覧'}
                         topics={filteredTopics}
+                        isWhite={false}
                     />
                 </div>
             </Layout>

@@ -3,7 +3,9 @@ import {
     faEnvelopeOpen,
     faFileVideo,
     faBook,
-    faMagnifyingGlass
+    faMagnifyingGlass,
+    faAngleDown,
+    faAngleUp,
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -20,6 +22,8 @@ library.add(
     faFileVideo,
     faBook,
     faMagnifyingGlass,
+    faAngleDown,
+    faAngleUp,
     faTwitter,
-    faInstagram
+    faInstagram,
 );

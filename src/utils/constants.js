@@ -1,1 +1,1 @@
-export const QUERY_KEY = 'q'
+export const QUERY_KEY = 'query'
