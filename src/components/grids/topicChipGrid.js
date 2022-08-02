@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as styles from './topicChipGrid.module.css';
-import {buildCategoryImageUrl, buildTopicUrl} from "../../utils/url";
+import {buildCategoryIconUrl, buildTopicUrl} from "../../utils/url";
 import TopicChip from "../cards/topicChip";
 
 const TopicChipGrid = ({topics, title = undefined, isWhite = true}) => {
@@ -15,7 +15,7 @@ const TopicChipGrid = ({topics, title = undefined, isWhite = true}) => {
                         <TopicChip
                             key={topic.title}
                             title={topic.title}
-                            imageUrl={buildCategoryImageUrl(topic.categoryId)}
+                            imageUrl={buildCategoryIconUrl(topic.categoryId)}
                             topicUrl={buildTopicUrl(topic.topicId)}
                         />
                     ))

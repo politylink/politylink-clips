@@ -3,7 +3,7 @@ import {graphql} from 'gatsby'
 import Layout from "../../components/layout/layout";
 import ClipCardGrid from "../../components/grids/clipCardGrid";
 import * as styles from "../topic/topicPage.module.css";
-import {buildAbsoluteUrl, buildCategoryImageUrl, buildCategoryUrl} from "../../utils/url";
+import {buildAbsoluteUrl, buildCategoryIconUrl, buildCategoryUrl} from "../../utils/url";
 import TopicChipGrid from "../../components/grids/topicChipGrid";
 import CategoryDetailCard from "../../components/cards/categoryDetailCard";
 
@@ -18,7 +18,7 @@ const CategoryPage = ({data}) => {
                     <CategoryDetailCard
                         title={`${category.title}カテゴリ`}
                         desc={`${category.title}に関するクリップを集めました`}
-                        imageUrl={buildCategoryImageUrl(category.categoryId)}
+                        imageUrl={buildCategoryIconUrl(category.categoryId)}
                         shareUrl={buildAbsoluteUrl(buildCategoryUrl(category.categoryId))}
                     />
                 </div>
@@ -29,9 +29,11 @@ const CategoryPage = ({data}) => {
                     />
                 </div>
             </div>
-            <ClipCardGrid
-                clips={clips}
-            />
+            <div className={styles.body}>
+                <ClipCardGrid
+                    clips={clips}
+                />
+            </div>
         </Layout>
     )
 }

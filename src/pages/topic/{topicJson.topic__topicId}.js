@@ -3,7 +3,7 @@ import {graphql} from 'gatsby'
 import Layout from "../../components/layout/layout";
 import ClipCardGrid from "../../components/grids/clipCardGrid";
 import TopicDetailCard from "../../components/cards/topicDetailCard";
-import {buildAbsoluteUrl, buildCategoryImageUrl, buildTopicUrl} from "../../utils/url";
+import {buildAbsoluteUrl, buildCategoryIconUrl, buildTopicUrl} from "../../utils/url";
 import * as styles from './topicPage.module.css'
 import TopicChipGrid from "../../components/grids/topicChipGrid";
 
@@ -17,7 +17,7 @@ const TopicPage = ({data}) => {
                 <div className={styles.topLeft}>
                     <TopicDetailCard
                         title={topic.title}
-                        imageUrl={buildCategoryImageUrl(topic.categoryId)}
+                        imageUrl={buildCategoryIconUrl(topic.categoryId)}
                         shareUrl={buildAbsoluteUrl(buildTopicUrl(topic.topicId))}
                     />
                 </div>
@@ -28,9 +28,11 @@ const TopicPage = ({data}) => {
                     />
                 </div>
             </div>
-            <ClipCardGrid
-                clips={clips}
-            />
+            <div className={styles.body}>
+                <ClipCardGrid
+                    clips={clips}
+                />
+            </div>
         </Layout>
     )
 }

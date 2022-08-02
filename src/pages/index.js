@@ -5,9 +5,11 @@ import CategoryCardGrid from "../components/grids/categoryCardGrid";
 import * as styles from "./index.module.css";
 import Header from "../components/layout/header";
 import Footer from "../components/layout/footer";
+import {useMediaQuery} from "react-responsive";
 
 const IndexPage = ({data}) => {
-    const clips = data.homeJson.clips
+    const isDesktop = useMediaQuery({query: '(min-width: 840px)'})
+    const clips = isDesktop ? data.homeJson.clips.slice(0, 10) : data.homeJson.clips.slice(0, 4);
     const categories = data.homeJson.categories
 
     // can't use layout to set white background for category section

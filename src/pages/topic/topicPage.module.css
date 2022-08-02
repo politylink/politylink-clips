@@ -16,6 +16,9 @@
     box-sizing: border-box;
 }
 
+.body {
+}
+
 @media screen and (max-width: 840px) {
     .top-left {
         width: 100%;

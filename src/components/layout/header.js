@@ -5,6 +5,7 @@ import {graphql, Link, useStaticQuery} from 'gatsby'
 import "../../utils/fontawesome";
 import {buildCategoryUrl} from "../../utils/url";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import MediaQuery from "react-responsive";
 
 const Header = () => {
     const data = useStaticQuery(
@@ -34,23 +35,25 @@ const Header = () => {
                     <p className={styles.headerLinkText}>ログイン</p>
                 </div>
             </div>
-            <nav>
-                <ul className={styles.navLinks}>
-                    <Link to="/" key={'ホーム'} className={styles.navLinkText}>{"ホーム"}</Link>
-                    {
-                        categories.map(category => (
-                            <Link to={buildCategoryUrl(category.categoryId)}
-                                  key={category.categoryId}
-                                  className={styles.navLinkText}>
-                                {category.title}
-                            </Link>
-                        ))
-                    }
-                    <Link to="/search" key={'search'} className={styles.navLinkText}>
-                        <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" size="lg"/>
-                    </Link>
-                </ul>
-            </nav>
+            <MediaQuery query="(min-width: 840px)">
+                <nav>
+                    <ul className={styles.navLinks}>
+                        <Link to="/" key={'ホーム'} className={styles.navLinkText}>{"ホーム"}</Link>
+                        {
+                            categories.map(category => (
+                                <Link to={buildCategoryUrl(category.categoryId)}
+                                      key={category.categoryId}
+                                      className={styles.navLinkText}>
+                                    {category.title}
+                                </Link>
+                            ))
+                        }
+                        <Link to="/search" key={'search'} className={styles.navLinkText}>
+                            <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" size="lg"/>
+                        </Link>
+                    </ul>
+                </nav>
+            </MediaQuery>
         </header>
     )
 }

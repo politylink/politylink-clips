@@ -12,7 +12,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gatsby-plugin-s3 deploy"
   },
   "dependencies": {
     "@fontsource/noto-sans-jp": "^4.5.10",
@@ -22,10 +23,14 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "gatsby": "^4.18.2",
     "gatsby-plugin-image": "^2.19.0",
+    "gatsby-plugin-s3": "^0.3.8",
+    "gatsby-plugin-sharp": "^4.19.0",
     "gatsby-source-filesystem": "^4.18.1",
     "gatsby-transformer-json": "^4.18.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-lazyload": "^3.2.0",
+    "react-responsive": "^9.0.0-beta.10",
     "react-share": "^4.4.0"
   }
 }

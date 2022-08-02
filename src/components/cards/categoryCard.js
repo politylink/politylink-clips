@@ -16,14 +16,14 @@ const CategoryCard = ({title, imageUrl, categoryUrl, topics, clips}) => {
             </Link>
             <div className={styles.topics}>
                 {topics.map((topic) => (
-                    <Link to={buildTopicUrl(topic.topicId)} className={styles.link}>
+                    <Link to={buildTopicUrl(topic.topicId)} key={topic.topicId} className={styles.link}>
                         <p className={styles.topicItem}>{topic.title}</p>
                     </Link>
                 ))}
             </div>
             <div className={styles.clips}>
                 {clips.map((clip) => (
-                    <div className={styles.clipItem}>
+                    <div key={clip.clipId} className={styles.clipItem}>
                         <Link to={buildClipUrl(clip.clipId)} className={styles.link}>
                             <p className={styles.clipItemText}>{clip.title}</p>
                         </Link>

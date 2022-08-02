@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as styles from './clipCard.module.css';
 import {Link} from "gatsby";
+import LazyLoad from 'react-lazyload';
 
 const ClipCard = ({
                       title,
@@ -17,7 +18,9 @@ const ClipCard = ({
 
     return (
         <Link to={clipUrl} className={styles.card}>
-            <img src={imageUrl} alt={"thumbnail"} className={styles.image}/>
+            <LazyLoad once>
+                <img src={imageUrl} alt={"thumbnail"} className={styles.image}/>
+            </LazyLoad>
             <div className={styles.body}>
                 <p className={styles.title}>{title}</p>
                 <p className={styles.subTitle}>{subTitle}</p>

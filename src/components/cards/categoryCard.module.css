@@ -8,8 +8,17 @@
     box-sizing: border-box;
 }
 
-.card:nth-child(3n + 2), .card:nth-child(3n) {
-    border-left: 1px solid #BFBFBF;
+
+@media screen and (min-width: 840px) {
+    .card:nth-child(3n + 2), .card:nth-child(3n) {
+        border-left: 1px solid #BFBFBF;
+    }
+}
+
+@media screen and (min-width: 540px) and (max-width: 840px) {
+    .card:nth-child(2n) {
+        border-left: 1px solid #BFBFBF;
+    }
 }
 
 .link {

@@ -25,7 +25,7 @@ const ClipPage = ({data}) => {
                         date={clip.date}
                         house={clip.house}
                         meeting={clip.meeting}
-                        imageUrl={buildClipImageUrl(clip.clipId)}
+                        imageUrl={buildClipImageUrl(clip.clipId, 'l')}
                         videoUrl={clip.videoUrl}
                         minutesUrl={clip.minutesUrl}
                         shareUrl={buildAbsoluteUrl(buildClipUrl(clip.clipId))}

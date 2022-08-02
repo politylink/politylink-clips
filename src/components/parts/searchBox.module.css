@@ -8,6 +8,8 @@
     box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     position: relative;
+    margin: auto;
+    box-sizing: border-box;
 }
 
 .icon {
@@ -21,6 +23,10 @@
     padding: 0;
     border: none;
     outline: none;
+}
+
+.input:placeholder-shown {
+    text-overflow: ellipsis;
 }
 
 .toggle {
