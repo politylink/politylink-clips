@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as styles from './categoryCardGrid.module.css'
-import {buildCategoryImageUrl, buildCategoryUrl} from "../../utils/url";
+import {buildCategoryUrl, buildCoverImageUrl} from "../../utils/url";
 import CategoryCard from "../cards/categoryCard";
 
 const CategoryCardGrid = ({categories}) => {
@@ -12,7 +12,7 @@ const CategoryCardGrid = ({categories}) => {
                         <CategoryCard
                             key={category.category.categoryId}
                             title={category.category.title}
-                            imageUrl={buildCategoryImageUrl(category.category.categoryId)}
+                            imageUrl={buildCoverImageUrl(category.category.categoryId)}
                             categoryUrl={buildCategoryUrl(category.category.categoryId)}
                             topics={category.topics}
                             clips={category.clips.slice(0, 2)}

@@ -6,8 +6,8 @@
 
 .grid {
     display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 @media screen and (min-width: 540px) and (max-width: 840px) {

@@ -1,0 +1,24 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.headline {
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.category {
+    padding: 20px;
+    width: 100%;
+    background-color: white;
+}
+
+.category-container {
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
+}

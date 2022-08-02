@@ -1,15 +1,27 @@
 .card {
     background-color: white;
-    max-width: 300px;
-    margin-bottom: auto;
+    width: 100%;
+    text-decoration: none;
+    color: #333333;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.card:nth-child(3n + 2), .card:nth-child(3n) {
+    border-left: 1px solid #BFBFBF;
+}
+
+.link {
     text-decoration: none;
     color: #333333;
 }
 
 .header {
-    display:flex;
-    padding: 10px;
+    display: flex;
+    padding: 10px 0;
     align-items: center;
+    border-top: 1px solid #333333;
 }
 
 .header-title {
@@ -23,13 +35,13 @@
 
 .image {
     width: 100%;
-    height: 100px;
+    height: 150px;
     object-fit: cover;
 }
 
 .topics {
     display: flex;
-    padding: 10px;
+    padding: 5px 10px;
     flex-wrap: wrap;
 }
 
@@ -40,10 +52,25 @@
 }
 
 .clips {
-    padding: 10px;
+    padding: 0 10px;
 }
 
 .clip-item {
-    margin: 3px 0px;
+    padding: 10px 0;
+    margin: 0;
+    text-decoration: none;
+    color: #333333;
+}
+
+.clip-item:nth-child(1) {
+    border-bottom: 1px solid #BFBFBF;
+}
+
+.clip-item-text {
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }
 

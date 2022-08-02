@@ -2,11 +2,12 @@ import * as React from "react";
 import * as styles from './categoryCard.module.css';
 import {Link} from "gatsby";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {buildClipUrl, buildTopicUrl} from "../../utils/url";
 
 const CategoryCard = ({title, imageUrl, categoryUrl, topics, clips}) => {
     return (
         <div className={styles.card}>
-            <Link to={categoryUrl}>
+            <Link to={categoryUrl} className={styles.link}>
                 <div className={styles.header}>
                     <p className={styles.headerTitle}>{title}</p>
                     <FontAwesomeIcon icon="fa-solid fa-angle-right" size="lg" className={styles.headerIcon}/>
@@ -15,12 +16,18 @@ const CategoryCard = ({title, imageUrl, categoryUrl, topics, clips}) => {
             </Link>
             <div className={styles.topics}>
                 {topics.map((topic) => (
-                    <p className={styles.topicItem}>{topic.title}</p>
+                    <Link to={buildTopicUrl(topic.topicId)} className={styles.link}>
+                        <p className={styles.topicItem}>{topic.title}</p>
+                    </Link>
                 ))}
             </div>
             <div className={styles.clips}>
                 {clips.map((clip) => (
-                    <p className={styles.clipItem}>{clip.title}</p>
+                    <div className={styles.clipItem}>
+                        <Link to={buildClipUrl(clip.clipId)} className={styles.link}>
+                            <p className={styles.clipItemText}>{clip.title}</p>
+                        </Link>
+                    </div>
                 ))}
             </div>
         </div>

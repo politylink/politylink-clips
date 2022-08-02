@@ -27,6 +27,10 @@ export const buildCategoryImageUrl = (category_id) => {
     return `/image/category/${category_id}.png`
 }
 
+export const buildCoverImageUrl = (category_id) => {
+    return `/image/cover/${category_id}.jpeg`
+}
+
 export const buildTopicUrl = (topic_id) => {
     return `/topic/${topic_id}`
 }

@@ -1,23 +1,38 @@
 import * as React from "react"
 import {graphql} from 'gatsby'
-import Layout from "../components/layout/layout";
 import ClipCardGrid from "../components/grids/clipCardGrid";
-import CategoryCard from "../components/cards/categoryCard";
 import CategoryCardGrid from "../components/grids/categoryCardGrid";
+import * as styles from "./index.module.css";
+import Header from "../components/layout/header";
+import Footer from "../components/layout/footer";
 
 const IndexPage = ({data}) => {
     const clips = data.homeJson.clips
     const categories = data.homeJson.categories
 
+    // can't use layout to set white background for category section
     return (
-        <Layout>
-            <ClipCardGrid
-                clips={clips}
-            />
-            <CategoryCardGrid
-                categories={categories}
-            />
-        </Layout>
+        <div className={styles.page}>
+            <title>
+                {"Clips｜国会を、おもしろく。"}
+            </title>
+            <Header/>
+            <main>
+                <div className={styles.headline}>
+                    <ClipCardGrid
+                        clips={clips}
+                    />
+                </div>
+                <div className={styles.category}>
+                    <div className={styles.categoryContainer}>
+                        <CategoryCardGrid
+                            categories={categories}
+                        />
+                    </div>
+                </div>
+            </main>
+            <Footer/>
+        </div>
     )
 }
 
