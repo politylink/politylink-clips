@@ -38,5 +38,9 @@
 .speech {
     color: #404040;
     font-size: 14px;
+        overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 10;
 }
 

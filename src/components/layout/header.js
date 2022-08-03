@@ -6,6 +6,7 @@ import "../../utils/fontawesome";
 import {buildCategoryUrl} from "../../utils/url";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import MediaQuery from "react-responsive";
+import HamburgerMenu from "./burger";
 
 const Header = () => {
     const data = useStaticQuery(
@@ -30,10 +31,16 @@ const Header = () => {
                 <Link className={styles.headerTitle} to='/'>
                     Clips.
                 </Link>
-                <div className={styles.headerLinks}>
-                    <p className={styles.headerLinkText}>Clipsについて</p>
-                    <p className={styles.headerLinkText}>ログイン</p>
-                </div>
+                <MediaQuery query="(min-width: 840px)">
+                    <div className={styles.headerLinks}>
+                        <p className={styles.headerLinkText}>Clipsについて</p>
+                    </div>
+                </MediaQuery>
+                <MediaQuery query="(max-width: 840px)">
+                    <HamburgerMenu
+                        categories={categories}
+                    />
+                </MediaQuery>
             </div>
             <MediaQuery query="(min-width: 840px)">
                 <nav>

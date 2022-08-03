@@ -46,6 +46,7 @@ const ClipPage = ({data}) => {
                     }
                     {clips && clips.length > 0 &&
                         <ClipCardGrid
+                            title={"関連クリップ"}
                             clips={clips}
                             isMain={false}
                         />
