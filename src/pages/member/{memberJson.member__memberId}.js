@@ -4,8 +4,10 @@ import Layout from "../../components/layout/layout";
 import ClipCardGrid from "../../components/grids/clipCardGrid";
 import * as styles from "./memberPage.module.css";
 import MemberDetailCard from "../../components/cards/memberDetailCard";
-import {buildAbsoluteUrl, buildMemberUrl} from "../../utils/url";
+import {buildAbsoluteUrl, buildMemberImageUrl, buildMemberUrl} from "../../utils/url";
 import TopicChipGrid from "../../components/grids/topicChipGrid";
+import SEO from "../../components/parts/seo";
+import {buildMemberPageDescription} from "../../utils/seo";
 
 const MemberPage = ({data}) => {
     const member = data.memberJson.member
@@ -85,3 +87,13 @@ export const query = graphql`
 
 
 export default MemberPage
+export const Head = ({location, data}) => {
+    const member = data.memberJson.member
+    return (
+        <SEO
+            description={buildMemberPageDescription(member)}
+            path={location.pathname}
+            imagePath={buildMemberImageUrl(member.memberId)}
+        />
+    )
+}

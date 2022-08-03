@@ -5,3 +5,4 @@ public
 artifact
 static/image/clip
 .DS_Store
+.env

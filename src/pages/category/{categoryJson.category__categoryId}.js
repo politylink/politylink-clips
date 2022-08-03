@@ -3,9 +3,11 @@ import {graphql} from 'gatsby'
 import Layout from "../../components/layout/layout";
 import ClipCardGrid from "../../components/grids/clipCardGrid";
 import * as styles from "../topic/topicPage.module.css";
-import {buildAbsoluteUrl, buildCategoryIconUrl, buildCategoryUrl} from "../../utils/url";
+import {buildAbsoluteUrl, buildCategoryIconUrl, buildCategoryImageUrl, buildCategoryUrl} from "../../utils/url";
 import TopicChipGrid from "../../components/grids/topicChipGrid";
 import CategoryDetailCard from "../../components/cards/categoryDetailCard";
+import SEO from "../../components/parts/seo";
+import {buildCategoryPageDescription} from "../../utils/seo";
 
 const CategoryPage = ({data}) => {
     const category = data.categoryJson.category
@@ -79,3 +81,13 @@ export const query = graphql`
 
 
 export default CategoryPage
+export const Head = ({location, data}) => {
+    const category = data.categoryJson.category
+    return (
+        <SEO
+            description={buildCategoryPageDescription(category)}
+            path={location.pathname}
+            imagePath={buildCategoryImageUrl(category.categoryId)}
+        />
+    )
+}

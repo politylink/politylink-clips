@@ -8,6 +8,9 @@ import {filterLabels, isMatchMember, isMatchTopic} from "../utils/search";
 import * as styles from './search.module.css'
 import {readLocalFilterId, readLocalQuery, storeLocalFilterId, storeLocalQuery} from "../utils/storage";
 import MemberChipGrid from "../components/grids/memberChipGrid";
+import SEO from "../components/parts/seo";
+import {buildSearchPageDescription, buildTopicPageDescription} from "../utils/seo";
+import {buildCategoryIconUrl} from "../utils/url";
 
 const SearchPage = ({data}) => {
     const [query, setQuery] = useState(readLocalQuery())
@@ -87,3 +90,12 @@ export const query = graphql`
 `
 
 export default SearchPage
+export const Head = ({location}) => {
+    return (
+        <SEO
+            description={buildSearchPageDescription()}
+            path={location.pathname}
+            twitterCard={'summary_large_image'}
+        />
+    )
+}

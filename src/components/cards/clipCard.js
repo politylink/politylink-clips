@@ -13,14 +13,17 @@ const ClipCard = ({
                       speakerImageUrl,
                       speakerName,
                       speakerInfo,
+                      headless = false
                   }) => {
     const subTitle = `${date} ${house} ${meeting}`
 
     return (
         <Link to={clipUrl} className={styles.card}>
-            <LazyLoad once>
-                <img src={imageUrl} alt={"thumbnail"} className={styles.image}/>
-            </LazyLoad>
+            {!headless &&
+                <LazyLoad once>
+                    <img src={imageUrl} alt={"thumbnail"} className={styles.image}/>
+                </LazyLoad>
+            }
             <div className={styles.body}>
                 <p className={styles.title}>{title}</p>
                 <p className={styles.subTitle}>{subTitle}</p>

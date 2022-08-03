@@ -6,6 +6,8 @@ import * as styles from "./index.module.css";
 import Header from "../components/layout/header";
 import Footer from "../components/layout/footer";
 import {useMediaQuery} from "react-responsive";
+import SEO from "../components/parts/seo";
+import {buildImageUrl} from "../utils/url";
 
 const IndexPage = ({data}) => {
     const isDesktop = useMediaQuery({query: '(min-width: 840px)'})
@@ -82,3 +84,11 @@ query {
 `
 
 export default IndexPage
+export const Head = ({location}) => {
+    return (
+        <SEO
+            path={location.pathname}
+            twitterCard={'summary_large_image'}
+        />
+    )
+}

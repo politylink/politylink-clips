@@ -30,7 +30,7 @@ const SearchBox = ({currentQuery, currentFilterId, filterLabels, handleQueryChan
             {isFilterOpen &&
                 <div className={styles.filter}>
                     {filterLabels.map((label, filterId) => (
-                        <button onClick={() => {
+                        <button key={filterId} onClick={() => {
                             handleFilterChange(filterId);
                             setIsFilterOpen(false);
                         }} className={styles.filterItem}>

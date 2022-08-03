@@ -6,6 +6,8 @@ import TopicDetailCard from "../../components/cards/topicDetailCard";
 import {buildAbsoluteUrl, buildCategoryIconUrl, buildTopicUrl} from "../../utils/url";
 import * as styles from './topicPage.module.css'
 import TopicChipGrid from "../../components/grids/topicChipGrid";
+import SEO from "../../components/parts/seo";
+import {buildMemberPageDescription, buildTopicPageDescription} from "../../utils/seo";
 
 const TopicPage = ({data}) => {
     const topic = data.topicJson.topic
@@ -77,3 +79,13 @@ export const query = graphql`
 
 
 export default TopicPage
+export const Head = ({location, data}) => {
+    const topic = data.topicJson.topic
+    return (
+        <SEO
+            description={buildTopicPageDescription(topic)}
+            path={location.pathname}
+            imagePath={buildCategoryIconUrl(topic.categoryId)}
+        />
+    )
+}

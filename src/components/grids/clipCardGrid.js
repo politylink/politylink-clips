@@ -4,7 +4,7 @@ import * as subStyles from './clipCardGrid.sub.module.css';
 import ClipCard from "../cards/clipCard";
 import {buildClipImageUrl, buildClipUrl, buildSpeakerImageUrl} from "../../utils/url";
 
-const ClipCardGrid = ({clips, title = undefined, isMain = true}) => {
+const ClipCardGrid = ({clips, title = undefined, isMain = true, headless=false}) => {
     const styles = isMain ? mainStyles : subStyles;
     return (
         <div className={styles.container}>
@@ -25,6 +25,7 @@ const ClipCardGrid = ({clips, title = undefined, isMain = true}) => {
                             speakerName={clip.member.name}
                             speakerInfo={`${clip.member.group}・${clip.member.block}`}
                             speakerImageUrl={buildSpeakerImageUrl()}
+                            headless={headless}
                         />
                     ))
                 }

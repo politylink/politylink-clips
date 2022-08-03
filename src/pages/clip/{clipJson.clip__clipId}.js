@@ -9,6 +9,8 @@ import SpeechCardGrid from "../../components/grids/speechCardGrid";
 import MemberCardGrid from "../../components/grids/memberCardGrid";
 import {buildAbsoluteUrl, buildClipImageUrl, buildClipUrl} from "../../utils/url";
 import TopicChipGrid from "../../components/grids/topicChipGrid";
+import SEO from "../../components/parts/seo";
+import {buildClipPageDescription} from "../../utils/seo";
 
 const ClipPage = ({data}) => {
     const clip = data.clipJson.clip
@@ -107,3 +109,13 @@ export const query = graphql`
 `
 
 export default ClipPage
+export const Head = ({location, data}) => {
+    const clip = data.clipJson.clip
+    return (
+        <SEO
+            description={buildClipPageDescription(clip)}
+            path={location.pathname}
+            imagePath={buildClipImageUrl(clip.clipId)}
+        />
+    )
+}
