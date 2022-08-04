@@ -7,17 +7,14 @@
     height: 50px;
 }
 
-.header-title {
-    color: white;
-    margin: 0;
-    font-size: 32px;
-    font-family: cursive;
-    text-decoration: none;
+.header-image {
+    margin: 6px 0 4px 0;
 }
 
 .header-links {
     display: flex;
     justify-content: end;
+    text-decoration: none;
 }
 
 .header-link-text {

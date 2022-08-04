@@ -10,7 +10,7 @@ import MemberCardGrid from "../../components/grids/memberCardGrid";
 import {buildAbsoluteUrl, buildClipImageUrl, buildClipUrl} from "../../utils/url";
 import TopicChipGrid from "../../components/grids/topicChipGrid";
 import SEO from "../../components/parts/seo";
-import {buildClipPageDescription} from "../../utils/seo";
+import {buildClipPageDescription, buildClipPageTitle} from "../../utils/seo";
 
 const ClipPage = ({data}) => {
     const clip = data.clipJson.clip
@@ -48,7 +48,7 @@ const ClipPage = ({data}) => {
                     }
                     {clips && clips.length > 0 &&
                         <ClipCardGrid
-                            title={"関連クリップ"}
+                            title={"他のクリップも見る"}
                             clips={clips}
                             isMain={false}
                         />
@@ -113,9 +113,9 @@ export const Head = ({location, data}) => {
     const clip = data.clipJson.clip
     return (
         <SEO
+            title={buildClipPageTitle(clip)}
             description={buildClipPageDescription(clip)}
             path={location.pathname}
-            imagePath={buildClipImageUrl(clip.clipId)}
         />
     )
 }

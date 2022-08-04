@@ -7,7 +7,7 @@ import MemberDetailCard from "../../components/cards/memberDetailCard";
 import {buildAbsoluteUrl, buildMemberImageUrl, buildMemberUrl} from "../../utils/url";
 import TopicChipGrid from "../../components/grids/topicChipGrid";
 import SEO from "../../components/parts/seo";
-import {buildMemberPageDescription} from "../../utils/seo";
+import {buildMemberPageDescription, buildMemberPageTitle} from "../../utils/seo";
 
 const MemberPage = ({data}) => {
     const member = data.memberJson.member
@@ -91,9 +91,9 @@ export const Head = ({location, data}) => {
     const member = data.memberJson.member
     return (
         <SEO
+            title={buildMemberPageTitle(member)}
             description={buildMemberPageDescription(member)}
             path={location.pathname}
-            imagePath={buildMemberImageUrl(member.memberId)}
         />
     )
 }

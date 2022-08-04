@@ -6,7 +6,7 @@ const CategoryDetailCard = ({title, desc, imageUrl, shareUrl}) => {
     return (
         <div className={styles.card}>
             <div className={styles.header}>
-                <img src={imageUrl} alt={"image"} className={styles.image}/>
+                <img src={imageUrl} alt={"image"} width={"80"} height={"80"} className={styles.image}/>
                 <p className={styles.title}>{title}</p>
             </div>
             <div className={styles.desc}>

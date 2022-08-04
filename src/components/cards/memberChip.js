@@ -6,7 +6,7 @@ import {Link} from "gatsby";
 const MemberChip = ({name, info, imageUrl, memberUrl}) => {
     return (
         <Link to={memberUrl} className={styles.chip}>
-            <img src={imageUrl} alt={"image"} className={styles.image}/>
+            <img src={imageUrl} alt={"image"} width={"30"} height={"30"} className={styles.image}/>
             <p className={styles.title}>{name}</p>
             <p className={styles.info}>{info}</p>
         </Link>

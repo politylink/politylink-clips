@@ -7,7 +7,7 @@ import {buildAbsoluteUrl, buildCategoryIconUrl, buildTopicUrl} from "../../utils
 import * as styles from './topicPage.module.css'
 import TopicChipGrid from "../../components/grids/topicChipGrid";
 import SEO from "../../components/parts/seo";
-import {buildMemberPageDescription, buildTopicPageDescription} from "../../utils/seo";
+import {buildMemberPageDescription, buildTopicPageDescription, buildTopicPageTitle} from "../../utils/seo";
 
 const TopicPage = ({data}) => {
     const topic = data.topicJson.topic
@@ -21,6 +21,7 @@ const TopicPage = ({data}) => {
                         title={topic.title}
                         imageUrl={buildCategoryIconUrl(topic.categoryId)}
                         shareUrl={buildAbsoluteUrl(buildTopicUrl(topic.topicId))}
+                        description={topic.description}
                     />
                 </div>
                 <div className={styles.topRight}>
@@ -46,6 +47,7 @@ export const query = graphql`
         topicId
         title
         categoryId
+        description
       }
       topics {
         topicId
@@ -83,6 +85,7 @@ export const Head = ({location, data}) => {
     const topic = data.topicJson.topic
     return (
         <SEO
+            title={buildTopicPageTitle(topic)}
             description={buildTopicPageDescription(topic)}
             path={location.pathname}
             imagePath={buildCategoryIconUrl(topic.categoryId)}

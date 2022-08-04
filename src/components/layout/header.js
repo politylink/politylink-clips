@@ -28,13 +28,13 @@ const Header = () => {
     return (
         <header>
             <div className={styles.header}>
-                <Link className={styles.headerTitle} to='/'>
-                    Clips.
+                <Link to='/'>
+                    <img src={'/image/header.png'} alt={'header'} height={"40"} className={styles.headerImage}/>
                 </Link>
                 <MediaQuery query="(min-width: 840px)">
-                    <div className={styles.headerLinks}>
+                    <Link to="/about" className={styles.headerLinks}>
                         <p className={styles.headerLinkText}>Clipsについて</p>
-                    </div>
+                    </Link>
                 </MediaQuery>
                 <MediaQuery query="(max-width: 840px)">
                     <HamburgerMenu

@@ -9,8 +9,7 @@ import * as styles from './search.module.css'
 import {readLocalFilterId, readLocalQuery, storeLocalFilterId, storeLocalQuery} from "../utils/storage";
 import MemberChipGrid from "../components/grids/memberChipGrid";
 import SEO from "../components/parts/seo";
-import {buildSearchPageDescription, buildTopicPageDescription} from "../utils/seo";
-import {buildCategoryIconUrl} from "../utils/url";
+import {buildSearchPageDescription, buildSearchPageTitle} from "../utils/seo";
 
 const SearchPage = ({data}) => {
     const [query, setQuery] = useState(readLocalQuery())
@@ -93,9 +92,9 @@ export default SearchPage
 export const Head = ({location}) => {
     return (
         <SEO
+            title={buildSearchPageTitle()}
             description={buildSearchPageDescription()}
             path={location.pathname}
-            twitterCard={'summary_large_image'}
         />
     )
 }

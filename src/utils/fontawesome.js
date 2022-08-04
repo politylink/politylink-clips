@@ -1,6 +1,6 @@
 import {config, library} from '@fortawesome/fontawesome-svg-core';
 import {
-    faEnvelopeOpen,
+    faEnvelope,
     faFileVideo,
     faBook,
     faMagnifyingGlass,
@@ -19,7 +19,7 @@ import {
 config.autoAddCss = false;
 
 library.add(
-    faEnvelopeOpen,
+    faEnvelope,
     faFileVideo,
     faBook,
     faMagnifyingGlass,

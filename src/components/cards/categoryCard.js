@@ -12,7 +12,7 @@ const CategoryCard = ({title, imageUrl, categoryUrl, topics, clips}) => {
                     <p className={styles.headerTitle}>{title}</p>
                     <FontAwesomeIcon icon="fa-solid fa-angle-right" size="lg" className={styles.headerIcon}/>
                 </div>
-                <img src={imageUrl} alt={"img"} className={styles.image}/>
+                <img src={imageUrl} alt={"img"} height={"150"} className={styles.image}/>
             </Link>
             <div className={styles.topics}>
                 {topics.map((topic) => (

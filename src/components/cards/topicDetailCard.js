@@ -3,7 +3,7 @@ import * as styles from './topicDetailCard.module.css';
 import ShareButtons from "../parts/shareButtons";
 import FollowButton from "../parts/followButton";
 
-const TopicDetailCard = ({title, imageUrl, shareUrl}) => {
+const TopicDetailCard = ({title, imageUrl, shareUrl, description}) => {
     return (
         <div className={styles.card}>
             <div className={styles.header}>
@@ -11,6 +11,11 @@ const TopicDetailCard = ({title, imageUrl, shareUrl}) => {
                 <p className={styles.title}>{title}</p>
                 <FollowButton/>
             </div>
+            {description &&
+                <div className={styles.description}>
+                    <p className={styles.descriptionText}>{description}</p>
+                </div>
+            }
             <div className={styles.share}>
                 <ShareButtons
                     title={`「${title}」に関する国会クリップをチェックしよう`}

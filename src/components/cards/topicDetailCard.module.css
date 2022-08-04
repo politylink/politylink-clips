@@ -11,6 +11,16 @@
     margin-bottom: 20px;
 }
 
+.description {
+    margin: 10px 20px;
+}
+
+.description-text {
+    font-size: 14px;
+    color: #333333;
+    margin: 0;
+}
+
 .share {
     margin: 0 10px;
 }

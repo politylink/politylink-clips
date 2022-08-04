@@ -7,7 +7,7 @@ import {buildAbsoluteUrl, buildCategoryIconUrl, buildCategoryImageUrl, buildCate
 import TopicChipGrid from "../../components/grids/topicChipGrid";
 import CategoryDetailCard from "../../components/cards/categoryDetailCard";
 import SEO from "../../components/parts/seo";
-import {buildCategoryPageDescription} from "../../utils/seo";
+import {buildCategoryPageDescription, buildCategoryPageTitle} from "../../utils/seo";
 
 const CategoryPage = ({data}) => {
     const category = data.categoryJson.category
@@ -19,7 +19,7 @@ const CategoryPage = ({data}) => {
                 <div className={styles.topLeft}>
                     <CategoryDetailCard
                         title={`${category.title}カテゴリ`}
-                        desc={`${category.title}に関するクリップを集めました`}
+                        desc={`${category.desc}`}
                         imageUrl={buildCategoryIconUrl(category.categoryId)}
                         shareUrl={buildAbsoluteUrl(buildCategoryUrl(category.categoryId))}
                     />
@@ -85,9 +85,9 @@ export const Head = ({location, data}) => {
     const category = data.categoryJson.category
     return (
         <SEO
+            title={buildCategoryPageTitle(category)}
             description={buildCategoryPageDescription(category)}
             path={location.pathname}
-            imagePath={buildCategoryImageUrl(category.categoryId)}
         />
     )
 }
