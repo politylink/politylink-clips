@@ -31,7 +31,6 @@ export const query = graphql`
             name
             group
             block
-            imageUrl
           }
         }
       }

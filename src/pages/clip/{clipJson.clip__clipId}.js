@@ -76,7 +76,6 @@ export const query = graphql`
           name
           group
           block
-          imageUrl
         }
       }
       speeches {
@@ -96,7 +95,6 @@ export const query = graphql`
           name
           group
           block
-          imageUrl
         }
       }
       topics {

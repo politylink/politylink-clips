@@ -7,6 +7,7 @@ module.exports = {
         title: `Clips｜国会を、もっとおもしろく。`,
         description: `Clips（クリップス）は、あなたの興味にあった国会中継を見つけられる、国会メディアです。国会中継がクリップ（短編動画）として切り出され、トピックごとに整理されているため、注目の話題や、気になる議題を簡単にチェックできます。`,
         twitterUsername: `@politylink`,
+        twitterCard: `summary`,
         siteUrl: `https://clips.politylink.jp`,
         imageUrl: `https://image.politylink.jp/clips/summary.jpg`
     },
@@ -65,8 +66,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `Clips.`,
-                short_name: `Clips.`,
+                name: `Clips`,
+                short_name: `Clips`,
                 start_url: `/`,
                 background_color: `#ffffff`,
                 theme_color: `#000000`,

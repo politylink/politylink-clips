@@ -2,11 +2,12 @@ import React from "react"
 import {useSiteMetadata} from "../../hooks/useSiteMetadata"
 import {buildAbsoluteUrl} from "../../utils/url";
 
-const SEO = ({title, description, path, imageUrl, twitterCard = 'summary', children}) => {
+const SEO = ({title, description, path, imageUrl, twitterCard, children}) => {
     const {
         title: defaultTitle,
         description: defaultDescription,
         twitterUsername,
+        twitterCard: defaultTwitterCard,
         imageUrl: defaultImageUrl
     } = useSiteMetadata()
     const seo = {
@@ -14,7 +15,7 @@ const SEO = ({title, description, path, imageUrl, twitterCard = 'summary', child
         description: description || defaultDescription,
         url: buildAbsoluteUrl(path),
         image: imageUrl || defaultImageUrl,
-        twitterCard: twitterCard,
+        twitterCard: twitterCard || defaultTwitterCard,
         twitterUsername,
     }
 

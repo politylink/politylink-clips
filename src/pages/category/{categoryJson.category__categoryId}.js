@@ -3,7 +3,7 @@ import {graphql} from 'gatsby'
 import Layout from "../../components/layout/layout";
 import ClipCardGrid from "../../components/grids/clipCardGrid";
 import * as styles from "../topic/topicPage.module.css";
-import {buildAbsoluteUrl, buildCategoryIconUrl, buildCategoryImageUrl, buildCategoryUrl} from "../../utils/url";
+import {buildAbsoluteUrl, buildCategoryIconUrl, buildCategoryUrl} from "../../utils/url";
 import TopicChipGrid from "../../components/grids/topicChipGrid";
 import CategoryDetailCard from "../../components/cards/categoryDetailCard";
 import SEO from "../../components/parts/seo";
@@ -71,7 +71,6 @@ export const query = graphql`
             name
             group
             block
-            imageUrl
           }
         }
       }

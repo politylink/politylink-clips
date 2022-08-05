@@ -53,7 +53,6 @@ query {
         name
         group
         block
-        imageUrl
       }
     }
     categories {
@@ -75,7 +74,6 @@ query {
           name
           group
           block
-          imageUrl
         }
       }
     }

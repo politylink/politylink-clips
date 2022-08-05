@@ -7,7 +7,7 @@ import {buildAbsoluteUrl, buildCategoryIconUrl, buildTopicUrl} from "../../utils
 import * as styles from './topicPage.module.css'
 import TopicChipGrid from "../../components/grids/topicChipGrid";
 import SEO from "../../components/parts/seo";
-import {buildMemberPageDescription, buildTopicPageDescription, buildTopicPageTitle} from "../../utils/seo";
+import {buildTopicPageDescription, buildTopicPageTitle} from "../../utils/seo";
 
 const TopicPage = ({data}) => {
     const topic = data.topicJson.topic
@@ -71,7 +71,6 @@ export const query = graphql`
             name
             group
             block
-            imageUrl
           }
         }
       }

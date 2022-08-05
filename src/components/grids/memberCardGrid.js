@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as styles from './memberCardGrid.module.css';
 import MemberCard from "../cards/memberCard";
-import {buildMemberUrl} from "../../utils/url";
+import {buildMemberUrl, buildMemberImageUrl} from "../../utils/url";
 
 const MemberCardGrid = ({members}) => {
     return (
@@ -14,7 +14,7 @@ const MemberCardGrid = ({members}) => {
                             name={member.name}
                             info={`${member.group}・${member.block}`}
                             memberUrl={buildMemberUrl(member.memberId)}
-                            imageUrl={member.imageUrl}
+                            imageUrl={buildMemberImageUrl(member.memberId)}
                         />
                     ))
                 }

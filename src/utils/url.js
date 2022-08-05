@@ -28,7 +28,7 @@ export const buildClipImageUrl = (clip_id, size = 'm') => {
 }
 
 export const buildMemberImageUrl = (member_id) => {
-    const path = `/icon/anonymous.png`
+    const path = `/member/${member_id}.jpg`
     return buildImageUrl(path)
 }
 

@@ -22,7 +22,7 @@ const MemberPage = ({data}) => {
                         name={member.name}
                         info={`${member.group}・${member.block}`}
                         summary={member.summary}
-                        imageUrl={member.imageUrl}
+                        imageUrl={buildMemberImageUrl(member.memberId)}
                         refUrl={member.refUrl}
                         shareUrl={buildAbsoluteUrl(buildMemberUrl(member.memberId))}
                     />
@@ -53,7 +53,6 @@ export const query = graphql`
         block
         summary
         refUrl
-        imageUrl
       }
       topics {
         topicId
@@ -77,7 +76,6 @@ export const query = graphql`
             name
             group
             block
-            imageUrl
           }
         }
       }
