@@ -43,6 +43,14 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `markdowns`,
+                path: `${__dirname}/src/markdowns/`,
+            },
+        },
+        `gatsby-transformer-remark`,
+        {
             resolve: `gatsby-plugin-s3`,
             options: {
                 bucketName: 'politylink-clips',
@@ -60,7 +68,7 @@ module.exports = {
                 name: `Clips.`,
                 short_name: `Clips.`,
                 start_url: `/`,
-                background_color: `#000000`,
+                background_color: `#ffffff`,
                 theme_color: `#000000`,
                 display: `standalone`,
                 icon: `static/image/icon.png`

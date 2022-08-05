@@ -20,8 +20,8 @@ const ClipCard = ({
     return (
         <Link to={clipUrl} className={styles.card}>
             {!headless &&
-                <LazyLoad once>
-                    <img src={imageUrl} alt={"thumbnail"} className={styles.image}/>
+                <LazyLoad once className={styles.imageDiv}>
+                    <img src={imageUrl} alt={"thumbnail"} width={"480"} height={"270"} className={styles.image}/>
                 </LazyLoad>
             }
             <div className={styles.body}>

@@ -7,7 +7,7 @@ const ClipDetailCard = ({title, date, house, meeting, imageUrl, minutesUrl, vide
     const subTitle = `${date} ${house} ${meeting}`
     return (
         <div className={styles.card}>
-            <img src={imageUrl} alt={"screenshot"} className={styles.image}/>
+            <img src={imageUrl} alt={"screenshot"} width={"960"} height={"540"} className={styles.image}/>
             <div className={styles.body}>
                 <p className={styles.title}>{title}</p>
                 <p className={styles.subTitle}>{subTitle}</p>

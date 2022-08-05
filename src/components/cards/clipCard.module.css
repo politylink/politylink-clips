@@ -6,10 +6,16 @@
     color: #333333;
 }
 
+.imageDiv {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
 .image {
     padding: 0;
     object-fit: cover;
     width: 100%;
+    height: auto;
 }
 
 .body {

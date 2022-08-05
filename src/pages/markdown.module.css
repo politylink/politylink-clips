@@ -1,0 +1,17 @@
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.coffee {
+    margin: 100px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.coffee-image {
+    height: 60px !important;
+    width: 217px !important;
+}
